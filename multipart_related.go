@@ -3,7 +3,7 @@ package openapi
 import (
 	"bytes"
 	"errors"
-	"gofree5gc/lib/openapi/common"
+	"free5gc/lib/openapi/common"
 	"io/ioutil"
 	"net/http"
 	"regexp"
