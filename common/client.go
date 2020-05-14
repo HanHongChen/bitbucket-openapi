@@ -12,12 +12,14 @@ package common
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"encoding/xml"
 	"errors"
 	"fmt"
 	"io"
 	"mime/multipart"
+	"net"
 	"net/http"
 	"net/textproto"
 	"net/url"
@@ -30,6 +32,7 @@ import (
 	"time"
 	"unicode/utf8"
 
+	"golang.org/x/net/http2"
 	"golang.org/x/oauth2"
 )
 
@@ -37,6 +40,25 @@ var (
 	jsonCheck             = regexp.MustCompile(`(?i:(?:application|text)/(?:[a-zA-Z0-9./-]+\+)?json)`)
 	xmlCheck              = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 	multipartRelatedCheck = regexp.MustCompile("(?i:multipart/related)")
+)
+
+var (
+	innerHTTP2Client = &http.Client{
+		Transport: &http2.Transport{
+			TLSClientConfig: &tls.Config{
+				InsecureSkipVerify: true,
+			},
+		},
+	}
+
+	innerHTTP2CleartextClient = &http.Client{
+		Transport: &http2.Transport{
+			AllowHTTP: true,
+			DialTLS: func(network, addr string, cfg *tls.Config) (net.Conn, error) {
+				return net.Dial(network, addr)
+			},
+		},
+	}
 )
 
 type Configuration interface {
@@ -110,7 +132,13 @@ func ParameterToString(obj interface{}, collectionFormat string) string {
 
 // callAPI do the request.
 func CallAPI(cfg Configuration, request *http.Request) (*http.Response, error) {
-	return cfg.HTTPClient().Do(request)
+	if request.URL.Scheme == "https" {
+		return innerHTTP2Client.Do(request)
+	} else if request.URL.Scheme == "http" {
+		return innerHTTP2CleartextClient.Do(request)
+	}
+
+	return nil, fmt.Errorf("unsupported scheme[%s]", request.URL.Scheme)
 }
 
 // // Change base path to allow switching to mocks
@@ -376,9 +404,6 @@ func PrepareRequest(
 	if err != nil {
 		return nil, err
 	}
-
-	// Close http connection when recieved response
-	localVarRequest.Close = true
 
 	// add header parameters, if any
 	if len(headerParams) > 0 {
