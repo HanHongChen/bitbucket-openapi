@@ -2,7 +2,7 @@ package Nudm_UEContextManagement
 
 import (
 	"context"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -40,7 +40,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 	localVarHttpHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
@@ -48,12 +48,12 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 	// body params
 	localVarPostBody = &request
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarHttpResponse, err
 	}
@@ -64,7 +64,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
@@ -75,7 +75,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, err
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -84,7 +84,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -93,7 +93,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, apiError
 
 	default:
-		return localVarHttpResponse, common.ReportError("%d is not a valid status code in onDeregistrationNotification", localVarHttpResponse.StatusCode)
+		return localVarHttpResponse, openapi.ReportError("%d is not a valid status code in onDeregistrationNotification", localVarHttpResponse.StatusCode)
 	}
 
 }

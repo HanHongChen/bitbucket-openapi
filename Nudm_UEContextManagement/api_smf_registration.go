@@ -10,7 +10,7 @@
 package Nudm_UEContextManagement
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -56,10 +56,10 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if pduSessionId < 0 {
-		return localVarReturnValue, nil, common.ReportError("pduSessionId must be greater than 0")
+		return localVarReturnValue, nil, openapi.ReportError("pduSessionId must be greater than 0")
 	}
 	if pduSessionId > 255 {
-		return localVarReturnValue, nil, common.ReportError("pduSessionId must be less than 255")
+		return localVarReturnValue, nil, openapi.ReportError("pduSessionId must be less than 255")
 	}
 
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -70,7 +70,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -78,12 +78,12 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 	// body params
 	localVarPostBody = &smfRegistration
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -94,20 +94,20 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -116,7 +116,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -125,7 +125,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -134,7 +134,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -143,7 +143,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -152,7 +152,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError

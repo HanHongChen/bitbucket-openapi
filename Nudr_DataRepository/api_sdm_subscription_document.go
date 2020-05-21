@@ -10,7 +10,7 @@
 package Nudr_DataRepository
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -63,17 +63,17 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptions(ctx context.C
 	localVarHTTPHeaderAccepts := []string{}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -84,7 +84,7 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptions(ctx context.C
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -94,7 +94,7 @@ func (a *SDMSubscriptionDocumentApiService) RemovesdmSubscriptions(ctx context.C
 	case 204:
 		return localVarHTTPResponse, nil
 	default:
-		return localVarHTTPResponse, common.ReportError("%d is not a valid status code in RemovesdmSubscriptions", localVarHTTPResponse.StatusCode)
+		return localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in RemovesdmSubscriptions", localVarHTTPResponse.StatusCode)
 	}
 }
 
@@ -137,7 +137,7 @@ func (a *SDMSubscriptionDocumentApiService) Updatesdmsubscriptions(ctx context.C
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -146,17 +146,17 @@ func (a *SDMSubscriptionDocumentApiService) Updatesdmsubscriptions(ctx context.C
 	if localVarOptionals != nil && localVarOptionals.SdmSubscription.IsSet() {
 		localVarOptionalSdmSubscription, localVarOptionalSdmSubscriptionok := localVarOptionals.SdmSubscription.Value().(models.SdmSubscription)
 		if !localVarOptionalSdmSubscriptionok {
-			return nil, common.ReportError("sdmSubscription should be SdmSubscription")
+			return nil, openapi.ReportError("sdmSubscription should be SdmSubscription")
 		}
 		localVarPostBody = &localVarOptionalSdmSubscription
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -167,7 +167,7 @@ func (a *SDMSubscriptionDocumentApiService) Updatesdmsubscriptions(ctx context.C
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -177,7 +177,7 @@ func (a *SDMSubscriptionDocumentApiService) Updatesdmsubscriptions(ctx context.C
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

@@ -11,7 +11,7 @@ package Nsmf_PDUSession
 
 import (
 	"context"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -43,7 +43,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -51,12 +51,12 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 	// body params
 	localVarPostBody = &request
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -67,7 +67,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -77,7 +77,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -86,7 +86,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -95,7 +95,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -104,7 +104,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -113,7 +113,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -122,7 +122,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -131,7 +131,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -140,7 +140,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -149,7 +149,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -158,7 +158,7 @@ func (a *IndividualSMContextNotificationApiService) SMContextNotification(ctx co
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

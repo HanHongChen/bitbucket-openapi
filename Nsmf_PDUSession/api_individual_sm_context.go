@@ -12,7 +12,7 @@ package Nsmf_PDUSession
 import (
 	"context"
 	"fmt"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -70,17 +70,17 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 	localVarHttpHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarHttpResponse, err
 	}
@@ -91,7 +91,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
@@ -100,7 +100,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -109,7 +109,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -118,7 +118,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -127,7 +127,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -136,7 +136,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -145,7 +145,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -154,7 +154,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -163,7 +163,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -172,7 +172,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -180,7 +180,7 @@ func (a *IndividualSMContextApiService) ReleaseSmContext(ctx context.Context, sm
 		apiError.ErrorModel = v
 		return localVarHttpResponse, apiError
 	default:
-		return localVarHttpResponse, common.ReportError("%d is not a valid status code in ReleaseSmContext", localVarHttpResponse.StatusCode)
+		return localVarHttpResponse, openapi.ReportError("%d is not a valid status code in ReleaseSmContext", localVarHttpResponse.StatusCode)
 	}
 }
 
@@ -223,7 +223,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 	localVarHttpHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
@@ -232,17 +232,17 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 	if localVarOptionals != nil && localVarOptionals.SmContextRetrieveData.IsSet() {
 		localVarOptionalSmContextRetrieveData, localVarOptionalSmContextRetrieveDataok := localVarOptionals.SmContextRetrieveData.Value().(models.SmContextRetrieveData)
 		if !localVarOptionalSmContextRetrieveDataok {
-			return localVarReturnValue, nil, common.ReportError("smContextRetrieveData should be SmContextRetrieveData")
+			return localVarReturnValue, nil, openapi.ReportError("smContextRetrieveData should be SmContextRetrieveData")
 		}
 		localVarPostBody = &localVarOptionalSmContextRetrieveData
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -253,20 +253,20 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -275,7 +275,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -284,7 +284,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -293,7 +293,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -302,7 +302,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -311,7 +311,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -320,7 +320,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -329,7 +329,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -338,7 +338,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -346,7 +346,7 @@ func (a *IndividualSMContextApiService) RetrieveSmContext(ctx context.Context, s
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHttpResponse, apiError
 	default:
-		return localVarReturnValue, localVarHttpResponse, common.ReportError("%d is not a valid status code in RetrieveSmContext", localVarHttpResponse.StatusCode)
+		return localVarReturnValue, localVarHttpResponse, openapi.ReportError("%d is not a valid status code in RetrieveSmContext", localVarHttpResponse.StatusCode)
 	}
 }
 
@@ -389,17 +389,17 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 	localVarHttpHeaderAccepts := []string{"application/json", "multipart/related", "application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -410,13 +410,13 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -425,7 +425,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.UpdateSmContextErrorResponse
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -434,7 +434,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.UpdateSmContextErrorResponse
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -443,7 +443,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 404:
 		var v models.UpdateSmContextErrorResponse
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -452,7 +452,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -461,7 +461,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -470,7 +470,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -479,7 +479,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -488,7 +488,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.UpdateSmContextErrorResponse
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -497,7 +497,7 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.UpdateSmContextErrorResponse
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -505,6 +505,6 @@ func (a *IndividualSMContextApiService) UpdateSmContext(ctx context.Context, smC
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHttpResponse, apiError
 	default:
-		return localVarReturnValue, localVarHttpResponse, common.ReportError("%d is not a valid status code in UpdateSmContext", localVarHttpResponse.StatusCode)
+		return localVarReturnValue, localVarHttpResponse, openapi.ReportError("%d is not a valid status code in UpdateSmContext", localVarHttpResponse.StatusCode)
 	}
 }

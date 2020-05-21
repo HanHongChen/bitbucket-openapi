@@ -10,7 +10,7 @@
 package Nudr_DataRepository
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -62,7 +62,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx co
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -70,12 +70,12 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx co
 	// body params
 	localVarPostBody = &patchItem
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -86,7 +86,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx co
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -96,7 +96,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx co
 		return localVarHTTPResponse, nil
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -105,7 +105,7 @@ func (a *AmfSubscriptionInfoDocumentApiService) ModifyAmfSubscriptionInfo(ctx co
 		return localVarHTTPResponse, apiError
 	default:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

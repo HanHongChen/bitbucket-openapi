@@ -10,7 +10,7 @@
 package Nudr_DataRepository
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -63,17 +63,17 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveEeGroupSubscriptions
 	localVarHTTPHeaderAccepts := []string{}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -84,7 +84,7 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveEeGroupSubscriptions
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -94,7 +94,7 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveEeGroupSubscriptions
 	case 204:
 		return localVarHTTPResponse, nil
 	default:
-		return localVarHTTPResponse, common.ReportError("%d is not a valid status code in RemoveEeGroupSubscriptions", localVarHTTPResponse.StatusCode)
+		return localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in RemoveEeGroupSubscriptions", localVarHTTPResponse.StatusCode)
 	}
 }
 
@@ -131,17 +131,17 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptions(ctx 
 	localVarHTTPHeaderAccepts := []string{}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -152,7 +152,7 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptions(ctx 
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -162,7 +162,7 @@ func (a *EventExposureSubscriptionDocumentApiService) RemoveeeSubscriptions(ctx 
 	case 204:
 		return localVarHTTPResponse, nil
 	default:
-		return localVarHTTPResponse, common.ReportError("%d is not a valid status code in RemoveeeSubscriptions", localVarHTTPResponse.StatusCode)
+		return localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in RemoveeeSubscriptions", localVarHTTPResponse.StatusCode)
 	}
 }
 
@@ -205,7 +205,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEeGroupSubscriptions
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -214,17 +214,17 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEeGroupSubscriptions
 	if localVarOptionals != nil && localVarOptionals.EeSubscription.IsSet() {
 		localVarOptionalEeSubscription, localVarOptionalEeSubscriptionok := localVarOptionals.EeSubscription.Value().(models.EeSubscription)
 		if !localVarOptionalEeSubscriptionok {
-			return nil, common.ReportError("eeSubscription should be EeSubscription")
+			return nil, openapi.ReportError("eeSubscription should be EeSubscription")
 		}
 		localVarPostBody = &localVarOptionalEeSubscription
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -235,7 +235,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEeGroupSubscriptions
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -245,7 +245,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEeGroupSubscriptions
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -294,7 +294,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx 
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -303,17 +303,17 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx 
 	if localVarOptionals != nil && localVarOptionals.EeSubscription.IsSet() {
 		localVarOptionalEeSubscription, localVarOptionalEeSubscriptionok := localVarOptionals.EeSubscription.Value().(models.EeSubscription)
 		if !localVarOptionalEeSubscriptionok {
-			return nil, common.ReportError("eeSubscription should be EeSubscription")
+			return nil, openapi.ReportError("eeSubscription should be EeSubscription")
 		}
 		localVarPostBody = &localVarOptionalEeSubscription
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -324,7 +324,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx 
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -334,7 +334,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx 
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

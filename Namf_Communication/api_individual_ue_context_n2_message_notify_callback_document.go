@@ -2,7 +2,7 @@ package Namf_Communication
 
 import (
 	"context"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -40,17 +40,17 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 	localVarHttpHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -61,13 +61,13 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -76,7 +76,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, err
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -85,7 +85,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -94,7 +94,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -103,7 +103,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -112,7 +112,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -121,7 +121,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -130,7 +130,7 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -138,6 +138,6 @@ func (a *N2MessageNotifyCallbackDocumentApiService) N2InfoNotify(ctx context.Con
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHttpResponse, apiError
 	default:
-		return localVarReturnValue, localVarHttpResponse, common.ReportError("%d is not a valid status code in N1N2MessageSubscribe", localVarHttpResponse.StatusCode)
+		return localVarReturnValue, localVarHttpResponse, openapi.ReportError("%d is not a valid status code in N1N2MessageSubscribe", localVarHttpResponse.StatusCode)
 	}
 }

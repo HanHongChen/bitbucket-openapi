@@ -10,7 +10,7 @@
 package Nnrf_NFDiscovery
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -124,103 +124,103 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("target-nf-type", common.ParameterToString(targetNfType, ""))
-	localVarQueryParams.Add("requester-nf-type", common.ParameterToString(requesterNfType, ""))
+	localVarQueryParams.Add("target-nf-type", openapi.ParameterToString(targetNfType, ""))
+	localVarQueryParams.Add("requester-nf-type", openapi.ParameterToString(requesterNfType, ""))
 	if localVarOptionals != nil && localVarOptionals.ServiceNames.IsSet() {
-		localVarQueryParams.Add("service-names", common.ParameterToString(localVarOptionals.ServiceNames.Value(), "csv"))
+		localVarQueryParams.Add("service-names", openapi.ParameterToString(localVarOptionals.ServiceNames.Value(), "csv"))
 	}
 	if localVarOptionals != nil && localVarOptionals.RequesterNfInstanceFqdn.IsSet() {
-		localVarQueryParams.Add("requester-nf-instance-fqdn", common.ParameterToString(localVarOptionals.RequesterNfInstanceFqdn.Value(), ""))
+		localVarQueryParams.Add("requester-nf-instance-fqdn", openapi.ParameterToString(localVarOptionals.RequesterNfInstanceFqdn.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TargetPlmnList.IsSet() {
-		localVarQueryParams.Add("target-plmn-list", common.ParameterToString(localVarOptionals.TargetPlmnList.Value(), "multi"))
+		localVarQueryParams.Add("target-plmn-list", openapi.ParameterToString(localVarOptionals.TargetPlmnList.Value(), "multi"))
 	}
 	if localVarOptionals != nil && localVarOptionals.RequesterPlmnList.IsSet() {
-		localVarQueryParams.Add("requester-plmn-list", common.ParameterToString(localVarOptionals.RequesterPlmnList.Value(), "multi"))
+		localVarQueryParams.Add("requester-plmn-list", openapi.ParameterToString(localVarOptionals.RequesterPlmnList.Value(), "multi"))
 	}
 	if localVarOptionals != nil && localVarOptionals.TargetNfInstanceId.IsSet() {
-		localVarQueryParams.Add("target-nf-instance-id", common.ParameterToString(localVarOptionals.TargetNfInstanceId.Value(), ""))
+		localVarQueryParams.Add("target-nf-instance-id", openapi.ParameterToString(localVarOptionals.TargetNfInstanceId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TargetNfFqdn.IsSet() {
-		localVarQueryParams.Add("target-nf-fqdn", common.ParameterToString(localVarOptionals.TargetNfFqdn.Value(), ""))
+		localVarQueryParams.Add("target-nf-fqdn", openapi.ParameterToString(localVarOptionals.TargetNfFqdn.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.HnrfUri.IsSet() {
-		localVarQueryParams.Add("hnrf-uri", common.ParameterToString(localVarOptionals.HnrfUri.Value(), ""))
+		localVarQueryParams.Add("hnrf-uri", openapi.ParameterToString(localVarOptionals.HnrfUri.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Snssais.IsSet() {
-		localVarQueryParams.Add("snssais", common.ParameterToString(localVarOptionals.Snssais.Value(), "multi"))
+		localVarQueryParams.Add("snssais", openapi.ParameterToString(localVarOptionals.Snssais.Value(), "multi"))
 	}
 	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() {
-		localVarQueryParams.Add("dnn", common.ParameterToString(localVarOptionals.Dnn.Value(), ""))
+		localVarQueryParams.Add("dnn", openapi.ParameterToString(localVarOptionals.Dnn.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.NsiList.IsSet() {
-		localVarQueryParams.Add("nsi-list", common.ParameterToString(localVarOptionals.NsiList.Value(), "csv"))
+		localVarQueryParams.Add("nsi-list", openapi.ParameterToString(localVarOptionals.NsiList.Value(), "csv"))
 	}
 	if localVarOptionals != nil && localVarOptionals.SmfServingArea.IsSet() {
-		localVarQueryParams.Add("smf-serving-area", common.ParameterToString(localVarOptionals.SmfServingArea.Value(), ""))
+		localVarQueryParams.Add("smf-serving-area", openapi.ParameterToString(localVarOptionals.SmfServingArea.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Tai.IsSet() {
-		localVarQueryParams.Add("tai", common.ParameterToString(localVarOptionals.Tai.Value(), ""))
+		localVarQueryParams.Add("tai", openapi.ParameterToString(localVarOptionals.Tai.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.AmfRegionId.IsSet() {
-		localVarQueryParams.Add("amf-region-id", common.ParameterToString(localVarOptionals.AmfRegionId.Value(), ""))
+		localVarQueryParams.Add("amf-region-id", openapi.ParameterToString(localVarOptionals.AmfRegionId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.AmfSetId.IsSet() {
-		localVarQueryParams.Add("amf-set-id", common.ParameterToString(localVarOptionals.AmfSetId.Value(), ""))
+		localVarQueryParams.Add("amf-set-id", openapi.ParameterToString(localVarOptionals.AmfSetId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Guami.IsSet() {
-		localVarQueryParams.Add("guami", common.ParameterToString(localVarOptionals.Guami.Value(), ""))
+		localVarQueryParams.Add("guami", openapi.ParameterToString(localVarOptionals.Guami.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Supi.IsSet() {
-		localVarQueryParams.Add("supi", common.ParameterToString(localVarOptionals.Supi.Value(), ""))
+		localVarQueryParams.Add("supi", openapi.ParameterToString(localVarOptionals.Supi.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.UeIpv4Address.IsSet() {
-		localVarQueryParams.Add("ue-ipv4-address", common.ParameterToString(localVarOptionals.UeIpv4Address.Value(), ""))
+		localVarQueryParams.Add("ue-ipv4-address", openapi.ParameterToString(localVarOptionals.UeIpv4Address.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.IpDomain.IsSet() {
-		localVarQueryParams.Add("ip-domain", common.ParameterToString(localVarOptionals.IpDomain.Value(), ""))
+		localVarQueryParams.Add("ip-domain", openapi.ParameterToString(localVarOptionals.IpDomain.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.UeIpv6Prefix.IsSet() {
-		localVarQueryParams.Add("ue-ipv6-prefix", common.ParameterToString(localVarOptionals.UeIpv6Prefix.Value(), ""))
+		localVarQueryParams.Add("ue-ipv6-prefix", openapi.ParameterToString(localVarOptionals.UeIpv6Prefix.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.PgwInd.IsSet() {
-		localVarQueryParams.Add("pgw-ind", common.ParameterToString(localVarOptionals.PgwInd.Value(), ""))
+		localVarQueryParams.Add("pgw-ind", openapi.ParameterToString(localVarOptionals.PgwInd.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Pgw.IsSet() {
-		localVarQueryParams.Add("pgw", common.ParameterToString(localVarOptionals.Pgw.Value(), ""))
+		localVarQueryParams.Add("pgw", openapi.ParameterToString(localVarOptionals.Pgw.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Gpsi.IsSet() {
-		localVarQueryParams.Add("gpsi", common.ParameterToString(localVarOptionals.Gpsi.Value(), ""))
+		localVarQueryParams.Add("gpsi", openapi.ParameterToString(localVarOptionals.Gpsi.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.ExternalGroupIdentity.IsSet() {
-		localVarQueryParams.Add("external-group-identity", common.ParameterToString(localVarOptionals.ExternalGroupIdentity.Value(), ""))
+		localVarQueryParams.Add("external-group-identity", openapi.ParameterToString(localVarOptionals.ExternalGroupIdentity.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.DataSet.IsSet() {
-		localVarQueryParams.Add("data-set", common.ParameterToString(localVarOptionals.DataSet.Value(), ""))
+		localVarQueryParams.Add("data-set", openapi.ParameterToString(localVarOptionals.DataSet.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.RoutingIndicator.IsSet() {
-		localVarQueryParams.Add("routing-indicator", common.ParameterToString(localVarOptionals.RoutingIndicator.Value(), ""))
+		localVarQueryParams.Add("routing-indicator", openapi.ParameterToString(localVarOptionals.RoutingIndicator.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.GroupIdList.IsSet() {
-		localVarQueryParams.Add("group-id-list", common.ParameterToString(localVarOptionals.GroupIdList.Value(), "csv"))
+		localVarQueryParams.Add("group-id-list", openapi.ParameterToString(localVarOptionals.GroupIdList.Value(), "csv"))
 	}
 	if localVarOptionals != nil && localVarOptionals.DnaiList.IsSet() {
-		localVarQueryParams.Add("dnai-list", common.ParameterToString(localVarOptionals.DnaiList.Value(), "csv"))
+		localVarQueryParams.Add("dnai-list", openapi.ParameterToString(localVarOptionals.DnaiList.Value(), "csv"))
 	}
 	if localVarOptionals != nil && localVarOptionals.SupportedFeatures.IsSet() {
-		localVarQueryParams.Add("supported-features", common.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
+		localVarQueryParams.Add("supported-features", openapi.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.UpfIwkEpsInd.IsSet() {
-		localVarQueryParams.Add("upf-iwk-eps-ind", common.ParameterToString(localVarOptionals.UpfIwkEpsInd.Value(), ""))
+		localVarQueryParams.Add("upf-iwk-eps-ind", openapi.ParameterToString(localVarOptionals.UpfIwkEpsInd.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.ChfSupportedPlmn.IsSet() {
-		localVarQueryParams.Add("chf-supported-plmn", common.ParameterToString(localVarOptionals.ChfSupportedPlmn.Value(), ""))
+		localVarQueryParams.Add("chf-supported-plmn", openapi.ParameterToString(localVarOptionals.ChfSupportedPlmn.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.PreferredLocality.IsSet() {
-		localVarQueryParams.Add("preferred-locality", common.ParameterToString(localVarOptionals.PreferredLocality.Value(), ""))
+		localVarQueryParams.Add("preferred-locality", openapi.ParameterToString(localVarOptionals.PreferredLocality.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.AccessType.IsSet() {
-		localVarQueryParams.Add("access-type", common.ParameterToString(localVarOptionals.AccessType.Value(), ""))
+		localVarQueryParams.Add("access-type", openapi.ParameterToString(localVarOptionals.AccessType.Value(), ""))
 	}
 
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -231,21 +231,21 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
 	if localVarOptionals != nil && localVarOptionals.IfNoneMatch.IsSet() {
-		localVarHeaderParams["If-None-Match"] = common.ParameterToString(localVarOptionals.IfNoneMatch.Value(), "")
+		localVarHeaderParams["If-None-Match"] = openapi.ParameterToString(localVarOptionals.IfNoneMatch.Value(), "")
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -256,14 +256,14 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -272,7 +272,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -281,7 +281,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -290,7 +290,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -299,7 +299,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -308,7 +308,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -317,7 +317,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -326,7 +326,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -335,7 +335,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 501:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -344,7 +344,7 @@ func (a *NFInstancesStoreApiService) SearchNFInstances(ctx context.Context, targ
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError

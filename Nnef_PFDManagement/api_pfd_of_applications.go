@@ -11,7 +11,7 @@ package Nnrf_NFManagement
 
 import (
 	"context"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -58,12 +58,12 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if len(applicationIds) < 1 {
-		return localVarReturnValue, nil, common.ReportError("applicationIds must have at least 1 elements")
+		return localVarReturnValue, nil, openapi.ReportError("applicationIds must have at least 1 elements")
 	}
 
-	localVarQueryParams.Add("application-ids", common.ParameterToString(applicationIds, "multi"))
+	localVarQueryParams.Add("application-ids", openapi.ParameterToString(applicationIds, "multi"))
 	if localVarOptionals != nil && localVarOptionals.SupportedFeatures.IsSet() {
-		localVarQueryParams.Add("supported-features", common.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
+		localVarQueryParams.Add("supported-features", openapi.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
 	}
 
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -74,17 +74,17 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -95,21 +95,21 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -118,7 +118,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -127,7 +127,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -136,7 +136,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -147,7 +147,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -156,7 +156,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -165,7 +165,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -174,7 +174,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -182,6 +182,6 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, common.ReportError("%d is not a valid status code in NnefPFDmanagementFetchAll", localVarHTTPResponse.StatusCode)
+		return localVarReturnValue, localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in NnefPFDmanagementFetchAll", localVarHTTPResponse.StatusCode)
 	}
 }

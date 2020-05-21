@@ -10,11 +10,12 @@
 package Nudr_DataRepository
 
 import (
-	"free5gc/lib/openapi/common"
+
 	// "free5gc/lib/openapi/models"
 
 	"context"
 	"fmt"
+	"free5gc/lib/openapi"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -59,17 +60,17 @@ func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptions(ctx
 	localVarHTTPHeaderAccepts := []string{}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -80,7 +81,7 @@ func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptions(ctx
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -90,6 +91,6 @@ func (a *SubsToNotifyDocumentApiService) RemovesubscriptionDataSubscriptions(ctx
 	case 204:
 		return localVarHTTPResponse, nil
 	default:
-		return localVarHTTPResponse, common.ReportError("%d is not a valid status code in RemovesubscriptionDataSubscriptions", localVarHTTPResponse.StatusCode)
+		return localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in RemovesubscriptionDataSubscriptions", localVarHTTPResponse.StatusCode)
 	}
 }

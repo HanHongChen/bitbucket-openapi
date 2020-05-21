@@ -10,7 +10,7 @@
 package Nausf_UEAuthentication
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -69,7 +69,7 @@ func (a *DefaultApiService) EapAuthMethod(ctx context.Context, authCtxId string,
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/3gppHal+json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -78,17 +78,17 @@ func (a *DefaultApiService) EapAuthMethod(ctx context.Context, authCtxId string,
 	if localVarOptionals != nil && localVarOptionals.EapSession.IsSet() {
 		localVarOptionalEapSession, localVarOptionalEapSessionok := localVarOptionals.EapSession.Value().(models.EapSession)
 		if !localVarOptionalEapSessionok {
-			return localVarReturnValue, nil, common.ReportError("eapSession should be models.EapSession")
+			return localVarReturnValue, nil, openapi.ReportError("eapSession should be models.EapSession")
 		}
 		localVarPostBody = &localVarOptionalEapSession
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -99,21 +99,21 @@ func (a *DefaultApiService) EapAuthMethod(ctx context.Context, authCtxId string,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -122,7 +122,7 @@ func (a *DefaultApiService) EapAuthMethod(ctx context.Context, authCtxId string,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -130,7 +130,7 @@ func (a *DefaultApiService) EapAuthMethod(ctx context.Context, authCtxId string,
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, common.ReportError("%d is not a valid status code in EapAuthMethod", localVarHTTPResponse.StatusCode)
+		return localVarReturnValue, localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in EapAuthMethod", localVarHTTPResponse.StatusCode)
 	}
 }
 
@@ -173,7 +173,7 @@ func (a *DefaultApiService) UeAuthenticationsAuthCtxId5gAkaConfirmationPut(ctx c
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -182,17 +182,17 @@ func (a *DefaultApiService) UeAuthenticationsAuthCtxId5gAkaConfirmationPut(ctx c
 	if localVarOptionals != nil && localVarOptionals.ConfirmationData.IsSet() {
 		localVarOptionalConfirmationData, localVarOptionalConfirmationDataok := localVarOptionals.ConfirmationData.Value().(models.ConfirmationData)
 		if !localVarOptionalConfirmationDataok {
-			return localVarReturnValue, nil, common.ReportError("confirmationData should be models.ConfirmationData")
+			return localVarReturnValue, nil, openapi.ReportError("confirmationData should be models.ConfirmationData")
 		}
 		localVarPostBody = &localVarOptionalConfirmationData
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -203,21 +203,21 @@ func (a *DefaultApiService) UeAuthenticationsAuthCtxId5gAkaConfirmationPut(ctx c
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -226,7 +226,7 @@ func (a *DefaultApiService) UeAuthenticationsAuthCtxId5gAkaConfirmationPut(ctx c
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -234,7 +234,7 @@ func (a *DefaultApiService) UeAuthenticationsAuthCtxId5gAkaConfirmationPut(ctx c
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, common.ReportError("%d is not a valid status code in UeAuthenticationsAuthCtxId5gAkaConfirmationPut", localVarHTTPResponse.StatusCode)
+		return localVarReturnValue, localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in UeAuthenticationsAuthCtxId5gAkaConfirmationPut", localVarHTTPResponse.StatusCode)
 	}
 }
 
@@ -270,7 +270,7 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 	localVarHTTPHeaderAccepts := []string{"application/3gppHal+json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -278,12 +278,12 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 	// body params
 	localVarPostBody = &authenticationInfo
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -294,21 +294,21 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -317,7 +317,7 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -326,7 +326,7 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -334,6 +334,6 @@ func (a *DefaultApiService) UeAuthenticationsPost(ctx context.Context, authentic
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, common.ReportError("%d is not a valid status code in UeAuthenticationsPost", localVarHTTPResponse.StatusCode)
+		return localVarReturnValue, localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in UeAuthenticationsPost", localVarHTTPResponse.StatusCode)
 	}
 }

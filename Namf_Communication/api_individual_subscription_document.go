@@ -12,7 +12,7 @@ package Namf_Communication
 import (
 	"context"
 	"fmt"
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 	"io/ioutil"
 	"net/http"
@@ -60,7 +60,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 	localVarHttpHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
@@ -68,12 +68,12 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 	// body params
 	localVarPostBody = &subscriptionData
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -84,20 +84,20 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 202:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -106,7 +106,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -115,7 +115,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -124,7 +124,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -133,7 +133,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -142,7 +142,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -151,7 +151,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -160,7 +160,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -168,7 +168,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeSubscribeModfy
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHttpResponse, apiError
 	default:
-		return localVarReturnValue, localVarHttpResponse, common.ReportError("%d is not a valid status code in AMFStatusChangeSubscribeModfy", localVarHttpResponse.StatusCode)
+		return localVarReturnValue, localVarHttpResponse, openapi.ReportError("%d is not a valid status code in AMFStatusChangeSubscribeModfy", localVarHttpResponse.StatusCode)
 	}
 }
 
@@ -202,17 +202,17 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 	localVarHttpHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHttpHeaderAccept := common.SelectHeaderAccept(localVarHttpHeaderAccepts)
+	localVarHttpHeaderAccept := openapi.SelectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHttpResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHttpResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHttpResponse == nil {
 		return localVarHttpResponse, err
 	}
@@ -223,7 +223,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHttpResponse.Status,
 	}
@@ -232,7 +232,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -241,7 +241,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -250,7 +250,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -259,7 +259,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -268,7 +268,7 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -276,6 +276,6 @@ func (a *IndividualSubscriptionDocumentApiService) AMFStatusChangeUnSubscribe(ct
 		apiError.ErrorModel = v
 		return localVarHttpResponse, apiError
 	default:
-		return localVarHttpResponse, common.ReportError("%d is not a valid status code in AMFStatusChangeUnSubscribe", localVarHttpResponse.StatusCode)
+		return localVarHttpResponse, openapi.ReportError("%d is not a valid status code in AMFStatusChangeUnSubscribe", localVarHttpResponse.StatusCode)
 	}
 }

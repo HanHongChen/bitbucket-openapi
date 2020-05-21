@@ -10,7 +10,7 @@
 package Nnrf_AccessToken
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -77,36 +77,36 @@ func (a *AccessTokenRequestApiService) AccessTokenRequest(ctx context.Context, g
 	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	localVarFormParams.Add("grant_type", common.ParameterToString(grantType, ""))
-	localVarFormParams.Add("nfInstanceId", common.ParameterToString(nfInstanceId, ""))
+	localVarFormParams.Add("grant_type", openapi.ParameterToString(grantType, ""))
+	localVarFormParams.Add("nfInstanceId", openapi.ParameterToString(nfInstanceId, ""))
 	if localVarOptionals != nil && localVarOptionals.NfType.IsSet() {
-		localVarFormParams.Add("nfType", common.ParameterToString(localVarOptionals.NfType.Value(), ""))
+		localVarFormParams.Add("nfType", openapi.ParameterToString(localVarOptionals.NfType.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TargetNfType.IsSet() {
-		localVarFormParams.Add("targetNfType", common.ParameterToString(localVarOptionals.TargetNfType.Value(), ""))
+		localVarFormParams.Add("targetNfType", openapi.ParameterToString(localVarOptionals.TargetNfType.Value(), ""))
 	}
-	localVarFormParams.Add("scope", common.ParameterToString(scope, ""))
+	localVarFormParams.Add("scope", openapi.ParameterToString(scope, ""))
 	if localVarOptionals != nil && localVarOptionals.TargetNfInstanceId.IsSet() {
-		localVarFormParams.Add("targetNfInstanceId", common.ParameterToString(localVarOptionals.TargetNfInstanceId.Value(), ""))
+		localVarFormParams.Add("targetNfInstanceId", openapi.ParameterToString(localVarOptionals.TargetNfInstanceId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.RequesterPlmn.IsSet() {
-		localVarFormParams.Add("requesterPlmn", common.ParameterToString(localVarOptionals.RequesterPlmn.Value(), ""))
+		localVarFormParams.Add("requesterPlmn", openapi.ParameterToString(localVarOptionals.RequesterPlmn.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.TargetPlmn.IsSet() {
-		localVarFormParams.Add("targetPlmn", common.ParameterToString(localVarOptionals.TargetPlmn.Value(), ""))
+		localVarFormParams.Add("targetPlmn", openapi.ParameterToString(localVarOptionals.TargetPlmn.Value(), ""))
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -117,21 +117,21 @@ func (a *AccessTokenRequestApiService) AccessTokenRequest(ctx context.Context, g
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.AccessTokenErr
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -139,6 +139,6 @@ func (a *AccessTokenRequestApiService) AccessTokenRequest(ctx context.Context, g
 		apiError.ErrorModel = v
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, common.ReportError("%d is not a valid status code in AccessTokenRequest", localVarHTTPResponse.StatusCode)
+		return localVarReturnValue, localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in AccessTokenRequest", localVarHTTPResponse.StatusCode)
 	}
 }

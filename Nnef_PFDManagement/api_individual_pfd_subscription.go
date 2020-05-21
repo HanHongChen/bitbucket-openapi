@@ -10,9 +10,8 @@
 package Nnrf_NFManagement
 
 import (
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
-
-	"free5gc/lib/openapi/common"
 
 	"context"
 	"fmt"
@@ -60,17 +59,17 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -81,7 +80,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -91,7 +90,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -100,7 +99,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -109,7 +108,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -118,7 +117,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -127,7 +126,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -136,7 +135,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -145,7 +144,7 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -153,6 +152,6 @@ func (a *IndividualPFDSubscriptionApiService) NnefPFDmanagementUnsubscribe(ctx c
 		apiError.ErrorModel = v
 		return localVarHTTPResponse, apiError
 	default:
-		return localVarHTTPResponse, common.ReportError("%d is not a valid status code in NnefPFDmanagementUnsubscribe", localVarHTTPResponse.StatusCode)
+		return localVarHTTPResponse, openapi.ReportError("%d is not a valid status code in NnefPFDmanagementUnsubscribe", localVarHTTPResponse.StatusCode)
 	}
 }

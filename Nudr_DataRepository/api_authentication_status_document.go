@@ -10,7 +10,7 @@
 package Nudr_DataRepository
 
 import (
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	"free5gc/lib/openapi/models"
 
 	"context"
@@ -67,7 +67,7 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx 
 	localVarHTTPHeaderAccepts := []string{"application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -76,17 +76,17 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx 
 	if localVarOptionals != nil && localVarOptionals.AuthEvent.IsSet() {
 		localVarOptionalAuthEvent, localVarOptionalAuthEventok := localVarOptionals.AuthEvent.Value().(models.AuthEvent)
 		if !localVarOptionalAuthEventok {
-			return nil, common.ReportError("authEvent should be AuthEvent")
+			return nil, openapi.ReportError("authEvent should be AuthEvent")
 		}
 		localVarPostBody = &localVarOptionalAuthEvent
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -97,7 +97,7 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx 
 		return localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
@@ -107,7 +107,7 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx 
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

@@ -18,7 +18,7 @@ import (
 
 	"github.com/antihax/optional"
 
-	"free5gc/lib/openapi/common"
+	"free5gc/lib/openapi"
 	. "free5gc/lib/openapi/models"
 )
 
@@ -68,22 +68,22 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("nf-type", common.ParameterToString(nfType, ""))
-	localVarQueryParams.Add("nf-id", common.ParameterToString(nfId, ""))
+	localVarQueryParams.Add("nf-type", openapi.ParameterToString(nfType, ""))
+	localVarQueryParams.Add("nf-id", openapi.ParameterToString(nfId, ""))
 	if localVarOptionals != nil && localVarOptionals.SliceInfoRequestForRegistration.IsSet() {
-		localVarQueryParams.Add("slice-info-request-for-registration", common.ParameterToString(localVarOptionals.SliceInfoRequestForRegistration.Value(), ""))
+		localVarQueryParams.Add("slice-info-request-for-registration", openapi.ParameterToString(localVarOptionals.SliceInfoRequestForRegistration.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.SliceInfoRequestForPduSession.IsSet() {
-		localVarQueryParams.Add("slice-info-request-for-pdu-session", common.ParameterToString(localVarOptionals.SliceInfoRequestForPduSession.Value(), ""))
+		localVarQueryParams.Add("slice-info-request-for-pdu-session", openapi.ParameterToString(localVarOptionals.SliceInfoRequestForPduSession.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.HomePlmnId.IsSet() {
-		localVarQueryParams.Add("home-plmn-id", common.ParameterToString(localVarOptionals.HomePlmnId.Value(), ""))
+		localVarQueryParams.Add("home-plmn-id", openapi.ParameterToString(localVarOptionals.HomePlmnId.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Tai.IsSet() {
-		localVarQueryParams.Add("tai", common.ParameterToString(localVarOptionals.Tai.Value(), ""))
+		localVarQueryParams.Add("tai", openapi.ParameterToString(localVarOptionals.Tai.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.SupportedFeatures.IsSet() {
-		localVarQueryParams.Add("supported-features", common.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
+		localVarQueryParams.Add("supported-features", openapi.ParameterToString(localVarOptionals.SupportedFeatures.Value(), ""))
 	}
 
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -94,17 +94,17 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := common.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := openapi.SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	r, err := common.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
 
-	localVarHTTPResponse, err := common.CallAPI(a.client.cfg, r)
+	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -115,21 +115,21 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	apiError := common.GenericOpenAPIError{
+	apiError := openapi.GenericOpenAPIError{
 		RawBody:     localVarBody,
 		ErrorStatus: localVarHTTPResponse.Status,
 	}
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = common.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -138,7 +138,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -147,7 +147,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -156,7 +156,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -167,7 +167,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -176,7 +176,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -185,7 +185,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -194,7 +194,7 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGet(ctx context.C
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v ProblemDetails
-		err = common.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
