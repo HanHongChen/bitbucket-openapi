@@ -296,30 +296,30 @@ func MultipartSerialize(v interface{}) ([]byte, string, error) {
 
 		if ref != "" {
 			if contentID, err := getContentID(val, ref, class); err != nil {
-				return "", err
+				return nil, "", err
 			} else if contentID != "" {
 				h.Set("Content-ID", contentID)
 			} else {
-				return "", fmt.Errorf("ContentID of multipart binaryData in JsonData is empty")
+				return nil, "", fmt.Errorf("ContentID of multipart binaryData in JsonData is empty")
 			}
 		}
 		h.Set("Content-Type", contentType)
 		fieldData, err := w.CreatePart(h)
 		if err != nil {
-			return "", err
+			return nil, "", err
 		}
 		fieldBody, err := setBody(val.Field(i).Interface(), contentType)
 		if err != nil {
-			return "", err
+			return nil, "", err
 		}
 		_, err = fieldData.Write(fieldBody.Bytes())
 		if err != nil {
-			return "", err
+			return nil, "", err
 		}
 	}
 	err := w.Close()
 	if err != nil {
-		return "", err
+		return nil, "", err
 	}
 	contentType := "multipart/related; boundary=\"" + w.Boundary() + "\""
 
