@@ -9,10 +9,10 @@ import (
 )
 
 type Struct struct {
-	A []string
-	S string
-	N int
-	M map[int]string 
+	A  []string
+	S  string
+	N  int
+	M  map[int]string
 	DT *time.Time
 }
 
@@ -22,9 +22,9 @@ func TestConvert(t *testing.T) {
 		"S": "This is a string",
 		"N": 10,
 		"M": map[int]interface{}{
-			1:"one",
-			2:"two",
-			3:"three",
+			1: "one",
+			2: "two",
+			3: "three",
 		},
 		"DT": "2020-05-01T12:04:05+08:00",
 	}
@@ -39,9 +39,9 @@ func TestConvert(t *testing.T) {
 	assert.Equal(t, "This is a string", to.S)
 	assert.Equal(t, 10, to.N)
 	assert.Equal(t, map[int]string{
-		1:"one",
-		2:"two",
-		3:"three",
+		1: "one",
+		2: "two",
+		3: "three",
 	}, to.M)
 	expectTime, err := time.Parse(time.RFC3339, "2020-05-01T12:04:05+08:00")
 	assert.Equal(t, expectTime, *to.DT)

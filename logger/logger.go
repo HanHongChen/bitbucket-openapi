@@ -2,10 +2,11 @@ package logger
 
 import (
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"os"
 	"runtime"
 	"strings"
+
+	"github.com/sirupsen/logrus"
 
 	"free5gc/lib/logger_conf"
 	"free5gc/lib/logger_util"
