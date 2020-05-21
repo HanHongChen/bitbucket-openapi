@@ -7,8 +7,8 @@ import (
 	"free5gc/lib/http2_util"
 	"free5gc/lib/openapi/Nsmf_PDUSession"
 	"free5gc/lib/openapi/models"
-	"free5gc/src/amf/amf_handler"
 	amf_context "free5gc/src/amf/context"
+	"free5gc/src/amf/handler"
 	"free5gc/src/amf/httpcallback"
 	"free5gc/src/amf/util"
 	"net/http"
@@ -26,7 +26,7 @@ func init() {
 	router := gin.Default()
 
 	httpcallback.AddService(router)
-	go amf_handler.Handle()
+	go handler.Handle()
 
 	addr := fmt.Sprintf("%s:%d", TestAmf.TestAmf.HttpIPv4Address, TestAmf.TestAmf.HttpIpv4Port)
 	server, err := http2_util.NewServer(addr, util.AmfLogPath, router)
