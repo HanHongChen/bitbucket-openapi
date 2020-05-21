@@ -108,14 +108,14 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.UeContextCreateError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -124,7 +124,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.UeContextCreateError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -133,7 +133,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -142,7 +142,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -151,7 +151,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -160,7 +160,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -169,7 +169,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.UeContextCreateError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -178,7 +178,7 @@ func (a *IndividualUeContextDocumentApiService) CreateUEContext(ctx context.Cont
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -253,14 +253,14 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.AssignEbiError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -269,7 +269,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.AssignEbiError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -278,7 +278,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -287,7 +287,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -296,7 +296,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -305,7 +305,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -314,7 +314,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.AssignEbiError
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -323,7 +323,7 @@ func (a *IndividualUeContextDocumentApiService) EBIAssignment(ctx context.Contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -398,14 +398,14 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -414,7 +414,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -423,7 +423,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -432,7 +432,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -441,7 +441,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -450,7 +450,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -459,7 +459,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -468,7 +468,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -477,7 +477,7 @@ func (a *IndividualUeContextDocumentApiService) RegistrationStatusUpdate(ctx con
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -553,7 +553,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -562,7 +562,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -571,7 +571,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -580,7 +580,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -589,7 +589,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -598,7 +598,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -607,7 +607,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -616,7 +616,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -625,7 +625,7 @@ func (a *IndividualUeContextDocumentApiService) ReleaseUEContext(ctx context.Con
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -703,14 +703,14 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -719,7 +719,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -728,7 +728,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -737,7 +737,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -746,7 +746,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -755,7 +755,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -764,7 +764,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -773,7 +773,7 @@ func (a *IndividualUeContextDocumentApiService) UEContextTransfer(ctx context.Co
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError

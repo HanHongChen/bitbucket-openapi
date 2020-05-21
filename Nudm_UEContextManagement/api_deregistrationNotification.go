@@ -75,7 +75,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, err
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -84,7 +84,7 @@ func (a *DeregistrationNotificationCallbackApiService) DeregistrationNotify(ctx 
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError

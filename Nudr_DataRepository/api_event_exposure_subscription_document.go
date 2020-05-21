@@ -245,7 +245,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEeGroupSubscriptions
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -334,7 +334,7 @@ func (a *EventExposureSubscriptionDocumentApiService) UpdateEesubscriptions(ctx 
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

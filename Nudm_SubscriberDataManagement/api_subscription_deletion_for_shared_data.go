@@ -90,7 +90,7 @@ func (a *SubscriptionDeletionForSharedDataApiService) UnsubscribeForSharedData(c
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -99,7 +99,7 @@ func (a *SubscriptionDeletionForSharedDataApiService) UnsubscribeForSharedData(c
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -108,7 +108,7 @@ func (a *SubscriptionDeletionForSharedDataApiService) UnsubscribeForSharedData(c
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

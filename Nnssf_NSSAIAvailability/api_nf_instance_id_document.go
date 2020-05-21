@@ -90,7 +90,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, nil
 	case 400:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -99,7 +99,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -108,7 +108,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -117,7 +117,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -126,7 +126,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -135,7 +135,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityDelete(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -212,14 +212,14 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -228,7 +228,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -237,7 +237,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -246,7 +246,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -255,7 +255,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -264,7 +264,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -273,7 +273,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -282,7 +282,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -291,7 +291,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -300,7 +300,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPatch(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -377,14 +377,14 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -393,7 +393,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -402,7 +402,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -411,7 +411,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -420,7 +420,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -429,7 +429,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -438,7 +438,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -447,7 +447,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -456,7 +456,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -465,7 +465,7 @@ func (a *NFInstanceIDDocumentApiService) NSSAIAvailabilityPut(ctx context.Contex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError

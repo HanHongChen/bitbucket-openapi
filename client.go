@@ -26,7 +26,6 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
-	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -34,12 +33,6 @@ import (
 
 	"golang.org/x/net/http2"
 	"golang.org/x/oauth2"
-)
-
-var (
-	jsonCheck             = regexp.MustCompile(`(?i:(?:application|text)/(?:[a-zA-Z0-9./-]+\+)?json)`)
-	xmlCheck              = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
-	multipartRelatedCheck = regexp.MustCompile("(?i:multipart/related)")
 )
 
 var (
@@ -287,6 +280,52 @@ func MultipartEncode(v interface{}, body io.Writer) (string, error) {
 	return contentType, nil
 }
 
+func MultipartSerialize(v interface{}) ([]byte, string, error) {
+	buffer := new(bytes.Buffer)
+	val := reflect.Indirect(reflect.ValueOf(v))
+	w := multipart.NewWriter(buffer)
+
+	structType := val.Type()
+
+	for i := 0; i < val.NumField(); i++ {
+		if val.Field(i).IsNil() {
+			continue
+		}
+		contentType, ref, class := parseMultipartFieldParameters(structType.Field(i).Tag.Get("multipart"))
+		h := make(textproto.MIMEHeader)
+
+		if ref != "" {
+			if contentID, err := getContentID(val, ref, class); err != nil {
+				return "", err
+			} else if contentID != "" {
+				h.Set("Content-ID", contentID)
+			} else {
+				return "", fmt.Errorf("ContentID of multipart binaryData in JsonData is empty")
+			}
+		}
+		h.Set("Content-Type", contentType)
+		fieldData, err := w.CreatePart(h)
+		if err != nil {
+			return "", err
+		}
+		fieldBody, err := setBody(val.Field(i).Interface(), contentType)
+		if err != nil {
+			return "", err
+		}
+		_, err = fieldData.Write(fieldBody.Bytes())
+		if err != nil {
+			return "", err
+		}
+	}
+	err := w.Close()
+	if err != nil {
+		return "", err
+	}
+	contentType := "multipart/related; boundary=\"" + w.Boundary() + "\""
+
+	return buffer.Bytes(), contentType, nil
+}
+
 // prepareRequest build the request
 func PrepareRequest(
 	ctx context.Context,
@@ -457,7 +496,7 @@ func PrepareRequest(
 	return localVarRequest, nil
 }
 
-func MultipartDecode(b []byte, v interface{}, boundary string) (err error) {
+func MultipartDeserialize(b []byte, v interface{}, boundary string) (err error) {
 
 	body := bytes.NewReader(b)
 	r := multipart.NewReader(body, boundary)
@@ -480,7 +519,9 @@ func MultipartDecode(b []byte, v interface{}, boundary string) (err error) {
 		}
 		multipartBody = multipartBody[:n]
 
-		if jsonCheck.MatchString(contentType) {
+		kind := KindOfMediaType(contentType)
+
+		if kind == MediaKindJSON {
 			value := val.Field(0)
 			if value.Kind() == reflect.Ptr {
 				ptr := reflect.New(value.Type().Elem())
@@ -514,24 +555,24 @@ func MultipartDecode(b []byte, v interface{}, boundary string) (err error) {
 	return nil
 }
 
-func Decode(v interface{}, b []byte, contentType string) (err error) {
+func Deserialize(v interface{}, b []byte, contentType string) (err error) {
 	if s, ok := v.(*string); ok {
 		*s = string(b)
 		return nil
 	}
-	if xmlCheck.MatchString(contentType) {
-		if err = xml.Unmarshal(b, v); err != nil {
-			return err
-		}
-		return nil
-	}
-	if jsonCheck.MatchString(contentType) {
+
+	switch KindOfMediaType(contentType) {
+	case MediaKindJSON:
 		if err = json.Unmarshal(b, v); err != nil {
 			return err
 		}
 		return nil
-	}
-	if multipartRelatedCheck.MatchString(contentType) {
+	case MediaKindXML:
+		if err = xml.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	case MediaKindMultipartRelated:
 		boundary := ""
 		for _, part := range strings.Split(contentType, ";") {
 			if strings.HasPrefix(part, " boundary=") {
@@ -542,12 +583,15 @@ func Decode(v interface{}, b []byte, contentType string) (err error) {
 			return errors.New("multipart/related need boundary")
 		}
 		boundary = strings.Trim(boundary, "\" ")
-		if err = MultipartDecode(b, v, boundary); err != nil {
+		if err = MultipartDeserialize(b, v, boundary); err != nil {
 			return err
 		}
 		return nil
+	case MediaKindUnsupported:
+		return errors.New("undefined response type")
+	default:
+		return errors.New("undefined response type")
 	}
-	return errors.New("undefined response type")
 }
 
 // add a file to the multipart request
@@ -586,10 +630,12 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 		_, err = bodyBuf.WriteString(s)
 	} else if s, ok := body.(*string); ok {
 		_, err = bodyBuf.WriteString(*s)
-	} else if jsonCheck.MatchString(contentType) {
-		err = json.NewEncoder(bodyBuf).Encode(body)
-	} else if xmlCheck.MatchString(contentType) {
-		xml.NewEncoder(bodyBuf).Encode(body)
+	} else {
+		b, err = Serialize(body, contentType)
+		if err != nil {
+			return nil, err
+		}
+		_, err = bodyBuf.Write(b)
 	}
 
 	if err != nil {

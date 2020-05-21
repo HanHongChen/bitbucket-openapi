@@ -107,7 +107,7 @@ func (a *AuthenticationStatusDocumentApiService) CreateAuthenticationStatus(ctx 
 		return localVarHTTPResponse, nil
 	default:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
