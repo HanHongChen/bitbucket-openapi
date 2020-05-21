@@ -87,14 +87,14 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 	}
 	switch localVarHttpResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -103,7 +103,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -112,7 +112,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -121,7 +121,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -130,7 +130,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -139,7 +139,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -148,7 +148,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -157,7 +157,7 @@ func (a *NonUEN2MessagesSubscriptionsCollectionDocumentApiService) NonUeN2InfoSu
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError

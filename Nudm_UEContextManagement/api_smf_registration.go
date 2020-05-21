@@ -101,13 +101,13 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -116,7 +116,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -125,7 +125,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -134,7 +134,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -143,7 +143,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -152,7 +152,7 @@ func (a *SMFRegistrationApiService) SmfRegistrationsPduSessionId(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError

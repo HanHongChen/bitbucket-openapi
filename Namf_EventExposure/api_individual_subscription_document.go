@@ -89,7 +89,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -98,7 +98,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -107,7 +107,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -116,7 +116,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -125,7 +125,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -134,7 +134,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -143,7 +143,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -152,7 +152,7 @@ func (a *IndividualSubscriptionDocumentApiService) DeleteSubscription(ctx contex
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -231,14 +231,14 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 
 	switch localVarHttpResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHttpResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -247,7 +247,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -256,7 +256,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -265,7 +265,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -274,7 +274,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -283,7 +283,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -292,7 +292,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -301,7 +301,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError
@@ -310,7 +310,7 @@ func (a *IndividualSubscriptionDocumentApiService) ModifySubscription(ctx contex
 		return localVarReturnValue, localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHttpResponse, apiError

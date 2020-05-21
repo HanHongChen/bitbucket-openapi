@@ -75,7 +75,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, err
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -84,7 +84,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -93,7 +93,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -102,7 +102,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -111,7 +111,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -120,7 +120,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -129,7 +129,7 @@ func (a *N1MessageNotifyCallbackDocumentApiService) N1MessageNotify(ctx context.
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError

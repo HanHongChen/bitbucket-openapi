@@ -85,7 +85,7 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 	switch localVarHttpResponse.StatusCode {
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -94,7 +94,7 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 		return localVarHttpResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -103,7 +103,7 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 		return localVarHttpResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError
@@ -112,7 +112,7 @@ func (a *NonUEN2MessageNotificationIndividualSubscriptionDocumentApiService) Non
 		return localVarHttpResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHttpResponse, apiError

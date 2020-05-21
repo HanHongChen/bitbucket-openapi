@@ -124,14 +124,14 @@ func (a *AccessTokenRequestApiService) AccessTokenRequest(ctx context.Context, g
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.AccessTokenErr
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError

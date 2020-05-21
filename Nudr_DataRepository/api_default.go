@@ -119,14 +119,14 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -135,7 +135,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -144,7 +144,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -153,7 +153,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -164,7 +164,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -173,7 +173,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -182,7 +182,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -191,7 +191,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -265,7 +265,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -274,7 +274,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -283,7 +283,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -292,7 +292,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -301,7 +301,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -310,7 +310,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -319,7 +319,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdDelete(ctx co
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -396,7 +396,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -405,7 +405,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -414,7 +414,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -423,7 +423,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -432,7 +432,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -441,7 +441,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -450,7 +450,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -459,7 +459,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -468,7 +468,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -477,7 +477,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -486,7 +486,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPatch(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -563,13 +563,13 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -578,7 +578,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -587,7 +587,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -596,7 +596,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -605,7 +605,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -614,7 +614,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -623,7 +623,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -632,7 +632,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -641,7 +641,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -650,7 +650,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -659,7 +659,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -668,7 +668,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataInfluenceIdPut(ctx conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -764,14 +764,14 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -780,7 +780,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -789,7 +789,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -798,7 +798,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -809,7 +809,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -818,7 +818,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -827,7 +827,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -836,7 +836,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyGet(ctx cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -911,14 +911,14 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -927,7 +927,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -936,7 +936,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -945,7 +945,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -954,7 +954,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -963,7 +963,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -972,7 +972,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -981,7 +981,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -990,7 +990,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -999,7 +999,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifyPost(ctx con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1073,7 +1073,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1082,7 +1082,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1091,7 +1091,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1100,7 +1100,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1109,7 +1109,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1118,7 +1118,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1127,7 +1127,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1200,14 +1200,14 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1216,7 +1216,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1225,7 +1225,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1234,7 +1234,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1245,7 +1245,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1254,7 +1254,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1263,7 +1263,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1272,7 +1272,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1349,7 +1349,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -1358,7 +1358,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1367,7 +1367,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1376,7 +1376,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1385,7 +1385,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1394,7 +1394,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1403,7 +1403,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1412,7 +1412,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1421,7 +1421,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1430,7 +1430,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1439,7 +1439,7 @@ func (a *DefaultApiService) ApplicationDataInfluenceDataSubsToNotifySubscription
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1513,7 +1513,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1522,7 +1522,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1531,7 +1531,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1540,7 +1540,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1549,7 +1549,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1558,7 +1558,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1567,7 +1567,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdDelete(ctx context.Context, 
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -1640,14 +1640,14 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1656,7 +1656,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1665,7 +1665,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1674,7 +1674,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1685,7 +1685,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1694,7 +1694,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1703,7 +1703,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdGet(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1780,13 +1780,13 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -1795,7 +1795,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1804,7 +1804,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1813,7 +1813,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1822,7 +1822,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1831,7 +1831,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1840,7 +1840,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1849,7 +1849,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1858,7 +1858,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1867,7 +1867,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1876,7 +1876,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1885,7 +1885,7 @@ func (a *DefaultApiService) ApplicationDataPfdsAppIdPut(ctx context.Context, app
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1966,14 +1966,14 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1982,7 +1982,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -1991,7 +1991,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2000,7 +2000,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2011,7 +2011,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2020,7 +2020,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2029,7 +2029,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2038,7 +2038,7 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2113,14 +2113,14 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2129,7 +2129,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2138,7 +2138,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2147,7 +2147,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2156,7 +2156,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2165,7 +2165,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2174,7 +2174,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2183,7 +2183,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2192,7 +2192,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2201,7 +2201,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifyPost(ctx context.Context, ex
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2275,7 +2275,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2284,7 +2284,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2293,7 +2293,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2302,7 +2302,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2311,7 +2311,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2320,7 +2320,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2329,7 +2329,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdDelete(ctx context.Cont
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2406,14 +2406,14 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2422,7 +2422,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2431,7 +2431,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2440,7 +2440,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2449,7 +2449,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2458,7 +2458,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2467,7 +2467,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2476,7 +2476,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2485,7 +2485,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2494,7 +2494,7 @@ func (a *DefaultApiService) ExposureDataSubsToNotifySubIdPut(ctx context.Context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2568,7 +2568,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2577,7 +2577,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2586,7 +2586,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2595,7 +2595,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2604,7 +2604,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2613,7 +2613,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2622,7 +2622,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdDelete(ctx context.Co
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2695,14 +2695,14 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2711,7 +2711,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2720,7 +2720,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2729,7 +2729,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2740,7 +2740,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2749,7 +2749,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2758,7 +2758,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdGet(ctx context.Conte
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -2847,7 +2847,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2856,7 +2856,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2865,7 +2865,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2874,7 +2874,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2883,7 +2883,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2892,7 +2892,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2901,7 +2901,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2910,7 +2910,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2919,7 +2919,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2928,7 +2928,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -2937,7 +2937,7 @@ func (a *DefaultApiService) PolicyDataBdtDataBdtReferenceIdPut(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3008,14 +3008,14 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3024,7 +3024,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3033,7 +3033,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3042,7 +3042,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3053,7 +3053,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3062,7 +3062,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3071,7 +3071,7 @@ func (a *DefaultApiService) PolicyDataBdtDataGet(ctx context.Context) ([]models.
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3144,14 +3144,14 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3160,7 +3160,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3169,7 +3169,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3178,7 +3178,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3189,7 +3189,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 412:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3198,7 +3198,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3207,7 +3207,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3216,7 +3216,7 @@ func (a *DefaultApiService) PolicyDataPlmnsPlmnIdUePolicySetGet(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3289,7 +3289,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -3298,7 +3298,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3307,7 +3307,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3316,7 +3316,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3325,7 +3325,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3336,7 +3336,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3345,7 +3345,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3354,7 +3354,7 @@ func (a *DefaultApiService) PolicyDataSponsorConnectivityDataSponsorIdGet(ctx co
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3440,14 +3440,14 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 
 	switch localVarHTTPResponse.StatusCode {
 	case 201:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3456,7 +3456,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3465,7 +3465,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3474,7 +3474,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3483,7 +3483,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3492,7 +3492,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3501,7 +3501,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3510,7 +3510,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3519,7 +3519,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3528,7 +3528,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifyPost(ctx context.Context, loca
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3602,7 +3602,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3611,7 +3611,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3620,7 +3620,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3629,7 +3629,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3638,7 +3638,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3647,7 +3647,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3656,7 +3656,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdDelete(ctx context.Conte
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -3744,14 +3744,14 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3760,7 +3760,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3769,7 +3769,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3778,7 +3778,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3787,7 +3787,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3796,7 +3796,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3805,7 +3805,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3814,7 +3814,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3823,7 +3823,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3832,7 +3832,7 @@ func (a *DefaultApiService) PolicyDataSubsToNotifySubsIdPut(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3905,14 +3905,14 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3921,7 +3921,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3930,7 +3930,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3939,7 +3939,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3950,7 +3950,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3959,7 +3959,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -3968,7 +3968,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdAmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4051,14 +4051,14 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4067,7 +4067,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4076,7 +4076,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4085,7 +4085,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4096,7 +4096,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4105,7 +4105,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4114,7 +4114,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4123,7 +4123,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4199,7 +4199,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 	switch localVarHTTPResponse.StatusCode {
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4208,7 +4208,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4217,7 +4217,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4226,7 +4226,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4235,7 +4235,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4244,7 +4244,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4253,7 +4253,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4262,7 +4262,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4271,7 +4271,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4280,7 +4280,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPatch(ctx conte
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4357,14 +4357,14 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4373,7 +4373,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4382,7 +4382,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4391,7 +4391,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4400,7 +4400,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4409,7 +4409,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4418,7 +4418,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4427,7 +4427,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4436,7 +4436,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4445,7 +4445,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataPut(ctx context
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4538,14 +4538,14 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4554,7 +4554,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4563,7 +4563,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4572,7 +4572,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4583,7 +4583,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4592,7 +4592,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4601,7 +4601,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4610,7 +4610,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -4699,7 +4699,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4708,7 +4708,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4717,7 +4717,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4726,7 +4726,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4735,7 +4735,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4744,7 +4744,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4753,7 +4753,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4762,7 +4762,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4771,7 +4771,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4780,7 +4780,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataPatch(ctx context.Context, ue
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4856,7 +4856,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4865,7 +4865,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4874,7 +4874,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4883,7 +4883,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4892,7 +4892,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4901,7 +4901,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4910,7 +4910,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdDelete(ctx context.
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -4985,7 +4985,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
@@ -4994,7 +4994,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5003,7 +5003,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5012,7 +5012,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5021,7 +5021,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5032,7 +5032,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5041,7 +5041,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5050,7 +5050,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5059,7 +5059,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdGet(ctx context.Con
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5150,7 +5150,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5159,7 +5159,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5168,7 +5168,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5177,7 +5177,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5186,7 +5186,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5195,7 +5195,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5204,7 +5204,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5213,7 +5213,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5222,7 +5222,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5231,7 +5231,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5240,7 +5240,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataUsageMonIdPut(ctx context.Con
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5313,14 +5313,14 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5329,7 +5329,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5338,7 +5338,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5347,7 +5347,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5358,7 +5358,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5367,7 +5367,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5376,7 +5376,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetGet(ctx context.Context,
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -5465,7 +5465,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5474,7 +5474,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5483,7 +5483,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5492,7 +5492,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5501,7 +5501,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5510,7 +5510,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5519,7 +5519,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5528,7 +5528,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5537,7 +5537,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5546,7 +5546,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPatch(ctx context.Contex
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5637,7 +5637,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5646,7 +5646,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5655,7 +5655,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5664,7 +5664,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5673,7 +5673,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5682,7 +5682,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5691,7 +5691,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5700,7 +5700,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5709,7 +5709,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError
@@ -5718,7 +5718,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdUePolicySetPut(ctx context.Context,
 		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarHTTPResponse, apiError

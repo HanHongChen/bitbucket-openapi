@@ -514,7 +514,7 @@ func MultipartDecode(b []byte, v interface{}, boundary string) (err error) {
 	return nil
 }
 
-func Decode(v interface{}, b []byte, contentType string) (err error) {
+func Deserialize(v interface{}, b []byte, contentType string) (err error) {
 	if s, ok := v.(*string); ok {
 		*s = string(b)
 		return nil

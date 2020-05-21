@@ -19,7 +19,7 @@ func (MultipartRelatedBinding) Bind(req *http.Request, obj interface{}) error {
 	if err != nil {
 		return err
 	}
-	return Decode(obj, b, req.Header.Get("Content-Type"))
+	return Deserialize(obj, b, req.Header.Get("Content-Type"))
 }
 
 func (MultipartRelatedBinding) BindBody(body []byte, obj interface{}) error {
@@ -28,7 +28,7 @@ func (MultipartRelatedBinding) BindBody(body []byte, obj interface{}) error {
 	if len(submatch) < 1 {
 		return errors.New("cannot parse multipart boundary")
 	}
-	return Decode(obj, body, "multipart/related; boundary="+string(submatch[1]))
+	return Deserialize(obj, body, "multipart/related; boundary="+string(submatch[1]))
 }
 
 type MultipartRelatedRender struct {

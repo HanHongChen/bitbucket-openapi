@@ -102,14 +102,14 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 		}
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -118,7 +118,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -127,7 +127,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -136,7 +136,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -147,7 +147,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, nil
 	case 414:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -156,7 +156,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -165,7 +165,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
@@ -174,7 +174,7 @@ func (a *PFDOfApplicationsApiService) NnefPFDmanagementFetchAll(ctx context.Cont
 		return localVarReturnValue, localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
-		err = openapi.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
 			return localVarReturnValue, localVarHTTPResponse, apiError
