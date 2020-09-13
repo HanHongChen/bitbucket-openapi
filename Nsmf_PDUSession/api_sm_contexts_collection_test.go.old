@@ -3,7 +3,7 @@ package Nsmf_PDUSession
 import (
 	"context"
 	"fmt"
-	"free5gc/lib/openapi/models"
+	"bitbucket.org/free5gc-team/openapi/models"
 	"log"
 	"testing"
 )
