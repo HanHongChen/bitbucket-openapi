@@ -13,7 +13,7 @@ package Namf_Communication
 
 import (
 	"crypto/tls"
-	"free5gc/lib/http2_util"
+	"bitbucket.org/free5gc-team/http2_util"
 	"net/http"
 
 	"golang.org/x/net/http2"

@@ -1,7 +1,7 @@
 package openapi_test
 
 import (
-	"free5gc/lib/openapi"
+	"bitbucket.org/free5gc-team/openapi"
 	"testing"
 	"time"
 

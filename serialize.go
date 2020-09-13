@@ -5,7 +5,7 @@ import (
 	"encoding/xml"
 	"errors"
 
-	"free5gc/lib/openapi/logger"
+	"bitbucket.org/free5gc-team/openapi/logger"
 )
 
 // Serialize - serialize data v to corresponding media type

@@ -10,8 +10,8 @@
 package Nausf_UPUProtection
 
 import (
-	"free5gc/lib/openapi"
-	"free5gc/lib/openapi/models"
+	"bitbucket.org/free5gc-team/openapi"
+	"bitbucket.org/free5gc-team/openapi/models"
 
 	"context"
 	"fmt"
