@@ -9,11 +9,9 @@
 
 package models
 
-type DnaiChangeType string
+type SubscribedEvent string
 
-// List of DnaiChangeType
+// List of SubscribedEvent
 const (
-	DnaiChangeType_EARLY      DnaiChangeType = "EARLY"
-	DnaiChangeType_EARLY_LATE DnaiChangeType = "EARLY_LATE"
-	DnaiChangeType_LATE       DnaiChangeType = "LATE"
+	SubscribedEvent_UP_PATH_CHANGE SubscribedEvent = "UP_PATH_CHANGE"
 )

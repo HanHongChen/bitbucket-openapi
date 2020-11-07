@@ -34,4 +34,9 @@ const (
 	FailureCode_CM_USER_UNK            FailureCode = "CM_USER_UNK"
 	FailureCode_CM_RAT_FAILED          FailureCode = "CM_RAT_FAILED"
 	FailureCode_UE_STA_SUSP            FailureCode = "UE_STA_SUSP"
+	FailureCode_MALFUNCTION            FailureCode = "MALFUNCTION"
+	FailureCode_RESOURCE_LIMITATION    FailureCode = "RESOURCE_LIMITATION"
+	FailureCode_SHORT_DELAY            FailureCode = "SHORT_DELAY"
+	FailureCode_APP_ID_DUPLICATED      FailureCode = "APP_ID_DUPLICATED"
+	FailureCode_OTHER_REASON           FailureCode = "OTHER_REASON"
 )
