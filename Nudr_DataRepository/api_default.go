@@ -1927,7 +1927,9 @@ func (a *DefaultApiService) ApplicationDataPfdsGet(ctx context.Context, localVar
 	localVarFormParams := url.Values{}
 
 	if localVarOptionals != nil && localVarOptionals.AppId.IsSet() {
-		localVarQueryParams.Add("appId", openapi.ParameterToString(localVarOptionals.AppId.Value(), "csv"))
+		for _, appID := range localVarOptionals.AppId.Value().([]string) {
+			localVarQueryParams.Add("appId", appID)
+		}
 	}
 
 	localVarHTTPContentTypes := []string{"application/json"}
