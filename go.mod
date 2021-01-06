@@ -15,4 +15,5 @@ require (
 	golang.org/x/net v0.0.0-20201209123823-ac852fbbde11
 	golang.org/x/oauth2 v0.0.0-20201208152858-08078c50e5b5
 	google.golang.org/appengine v1.6.7 // indirect
+	gopkg.in/h2non/gock.v1 v1.0.16
 )
