@@ -1,14 +1,10 @@
 package logger
 
 import (
-	"os"
 	"time"
 
 	formatter "github.com/antonfisher/nested-logrus-formatter"
 	"github.com/sirupsen/logrus"
-
-	"bitbucket.org/free5gc-team/logger_conf"
-	"bitbucket.org/free5gc-team/logger_util"
 )
 
 var log *logrus.Logger
@@ -26,17 +22,11 @@ func init() {
 		FieldsOrder:     []string{"component", "category"},
 	}
 
-	free5gcLogHook, err := logger_util.NewFileHook(logger_conf.Free5gcLogFile, os.O_CREATE|os.O_APPEND|os.O_RDWR, 0666)
-	if err == nil {
-		log.Hooks.Add(free5gcLogHook)
-	}
-
-	selfLogHook, err := logger_util.NewFileHook(logger_conf.LibLogDir+"nnssf_ns_selection.log", os.O_CREATE|os.O_APPEND|os.O_RDWR, 0666)
-	if err == nil {
-		log.Hooks.Add(selfLogHook)
-	}
-
 	NnssfNSSelectionLog = log.WithFields(logrus.Fields{"component": "OAPI", "category": "NnssfNSSelect"})
+}
+
+func GetLogger() *logrus.Logger {
+	return log
 }
 
 func SetLogLevel(level logrus.Level) {
