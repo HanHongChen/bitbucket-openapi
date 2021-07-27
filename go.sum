@@ -1,5 +1,5 @@
-bitbucket.org/free5gc-team/http2_util v0.0.0-20201212235925-bd3a307d110a h1:jeZeox8I0w66Y7nBZhWiQqxoBRNgpjJJgYYCSPz8QcA=
-bitbucket.org/free5gc-team/http2_util v0.0.0-20201212235925-bd3a307d110a/go.mod h1:GQTj1a8NrkYrV6G+Rj5gV8ZofDGwuhUWyr6M8L0MD4E=
+bitbucket.org/free5gc-team/http2_util v0.0.0-20210727150618-67c7200d9f25 h1:oK/qbrsvo+yD2GAtgGK5xio48ukYb2bkBrQlKiq6z3E=
+bitbucket.org/free5gc-team/http2_util v0.0.0-20210727150618-67c7200d9f25/go.mod h1:GQTj1a8NrkYrV6G+Rj5gV8ZofDGwuhUWyr6M8L0MD4E=
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 cloud.google.com/go v0.38.0/go.mod h1:990N+gfupTy94rShfmMCWGDn0LpTmnzTp2qbd1dvSRU=
