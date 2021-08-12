@@ -34,7 +34,7 @@ func SetLogLevel(level logrus.Level) {
 	log.SetLevel(level)
 }
 
-func SetReportCaller(bool bool) {
-	OpenApiLog.Infoln("set report call :", bool)
-	log.SetReportCaller(bool)
+func SetReportCaller(enable bool) {
+	OpenApiLog.Infoln("set report call :", enable)
+	log.SetReportCaller(enable)
 }
