@@ -12,12 +12,13 @@ package Nsmf_EventExposure
 import (
 	"context"
 	"fmt"
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"bitbucket.org/free5gc-team/openapi"
+	"bitbucket.org/free5gc-team/openapi/models"
 )
 
 // Linger please
@@ -25,8 +26,10 @@ var (
 	_ context.Context
 )
 
-type DefaultCallbackApi service
-type DefaultApiService service
+type (
+	DefaultCallbackApi service
+	DefaultApiService  service
+)
 
 /*
 EventExposureNotification

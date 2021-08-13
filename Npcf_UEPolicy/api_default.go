@@ -12,11 +12,12 @@ package Npcf_UEPolicy
 import (
 	"context"
 	"fmt"
-	"bitbucket.org/free5gc-team/openapi/models"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"bitbucket.org/free5gc-team/openapi/models"
 )
 
 // Linger please

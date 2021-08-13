@@ -10,14 +10,14 @@
 package Nnef_PFDmanagement
 
 import (
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
-
 	"context"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"bitbucket.org/free5gc-team/openapi"
+	"bitbucket.org/free5gc-team/openapi/models"
 )
 
 // Linger please

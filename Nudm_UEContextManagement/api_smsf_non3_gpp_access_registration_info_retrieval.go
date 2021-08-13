@@ -10,9 +10,6 @@
 package Nudm_UEContextManagement
 
 import (
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
-
 	"context"
 	"fmt"
 	"io/ioutil"
@@ -21,6 +18,9 @@ import (
 	"strings"
 
 	"github.com/antihax/optional"
+
+	"bitbucket.org/free5gc-team/openapi"
+	"bitbucket.org/free5gc-team/openapi/models"
 )
 
 // Linger please

@@ -10,9 +10,6 @@
 package Nnrf_NFManagement
 
 import (
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
-
 	"context"
 	"io/ioutil"
 	"net/http"
@@ -20,6 +17,9 @@ import (
 	"strings"
 
 	"github.com/antihax/optional"
+
+	"bitbucket.org/free5gc-team/openapi"
+	"bitbucket.org/free5gc-team/openapi/models"
 )
 
 // Linger please
