@@ -81,7 +81,7 @@ type service struct {
 // optionally a custom http.Client to allow for advanced features such as caching.
 func NewAPIClient(cfg *Configuration) *APIClient {
 	if cfg.httpClient == nil {
-		cfg.httpClient = http.DefaultClient
+		cfg.httpClient = &http.Client{}
 		cfg.httpClient.Transport = &http2.Transport{
 			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		}
