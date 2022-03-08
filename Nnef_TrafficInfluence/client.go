@@ -10,11 +10,7 @@
 package Nnef_TrafficInfluence
 
 import (
-	"crypto/tls"
-	"net/http"
 	"regexp"
-
-	"golang.org/x/net/http2"
 )
 
 var (
@@ -42,13 +38,6 @@ type service struct {
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
 func NewAPIClient(cfg *Configuration) *APIClient {
-	if cfg.httpClient == nil {
-		cfg.httpClient = http.DefaultClient
-		cfg.httpClient.Transport = &http2.Transport{
-			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-		}
-	}
-
 	c := &APIClient{}
 	c.cfg = cfg
 	c.common.client = c
