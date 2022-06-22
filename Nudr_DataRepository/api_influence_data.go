@@ -66,19 +66,19 @@ func (a *InfluenceDataApiService) ApplicationDataInfluenceDataGet(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.InfluenceIds.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.InfluenceIds.IsSet() && localVarOptionals.InfluenceIds.Value() != "" {
 		localVarQueryParams.Add("influence-Ids", openapi.ParameterToString(localVarOptionals.InfluenceIds.Value(), "csv"))
 	}
-	if localVarOptionals != nil && localVarOptionals.Dnns.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Dnns.IsSet() && localVarOptionals.Dnns.Value() != "" {
 		localVarQueryParams.Add("dnns", openapi.ParameterToString(localVarOptionals.Dnns.Value(), "csv"))
 	}
-	if localVarOptionals != nil && localVarOptionals.Snssais.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Snssais.IsSet() && localVarOptionals.Snssais.Value() != "" {
 		localVarQueryParams.Add("snssais", openapi.ParameterToString(localVarOptionals.Snssais.Value(), "csv"))
 	}
-	if localVarOptionals != nil && localVarOptionals.InternalGroupIds.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.InternalGroupIds.IsSet() && localVarOptionals.InternalGroupIds.Value() != "" {
 		localVarQueryParams.Add("internal-Group-Ids", openapi.ParameterToString(localVarOptionals.InternalGroupIds.Value(), "csv"))
 	}
-	if localVarOptionals != nil && localVarOptionals.Supis.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Supis.IsSet() && localVarOptionals.Supis.Value() != "" {
 		localVarQueryParams.Add("supis", openapi.ParameterToString(localVarOptionals.Supis.Value(), "csv"))
 	}
 

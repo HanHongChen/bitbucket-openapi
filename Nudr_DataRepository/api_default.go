@@ -2592,7 +2592,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdOperatorSpecificDataGet(ctx context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() && localVarOptionals.Fields.Value() != "" {
 		localVarQueryParams.Add("fields", openapi.ParameterToString(localVarOptionals.Fields.Value(), "csv"))
 	}
 
@@ -3073,13 +3073,13 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Snssai.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Snssai.IsSet() && localVarOptionals.Snssai.Value() != "" {
 		localVarQueryParams.Add("snssai", openapi.ParameterToString(localVarOptionals.Snssai.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() && localVarOptionals.Dnn.Value() != "" {
 		localVarQueryParams.Add("dnn", openapi.ParameterToString(localVarOptionals.Dnn.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() && localVarOptionals.Fields.Value() != ""{
 		localVarQueryParams.Add("fields", openapi.ParameterToString(localVarOptionals.Fields.Value(), "csv"))
 	}
 

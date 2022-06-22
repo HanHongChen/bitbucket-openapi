@@ -238,31 +238,31 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindings(ctx context.Context, lo
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Ipv4Addr.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Ipv4Addr.IsSet() && localVarOptionals.Ipv4Addr.Value() != "" {
 		localVarQueryParams.Add("ipv4Addr", openapi.ParameterToString(localVarOptionals.Ipv4Addr.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Ipv6Prefix.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Ipv6Prefix.IsSet() && localVarOptionals.Ipv6Prefix.Value() != "" {
 		localVarQueryParams.Add("ipv6Prefix", openapi.ParameterToString(localVarOptionals.Ipv6Prefix.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.MacAddr48.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.MacAddr48.IsSet() && localVarOptionals.MacAddr48.Value() != "" {
 		localVarQueryParams.Add("macAddr48", openapi.ParameterToString(localVarOptionals.MacAddr48.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() && localVarOptionals.Dnn.Value() != "" {
 		localVarQueryParams.Add("dnn", openapi.ParameterToString(localVarOptionals.Dnn.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Supi.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Supi.IsSet() && localVarOptionals.Supi.Value() != "" {
 		localVarQueryParams.Add("supi", openapi.ParameterToString(localVarOptionals.Supi.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Gpsi.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Gpsi.IsSet() && localVarOptionals.Gpsi.Value() != "" {
 		localVarQueryParams.Add("gpsi", openapi.ParameterToString(localVarOptionals.Gpsi.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Snssai.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.Snssai.IsSet() && localVarOptionals.Snssai.Value() != "" {
 		localVarQueryParams.Add("snssai", openapi.ParameterToString(localVarOptionals.Snssai.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.IpDomain.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.IpDomain.IsSet() && localVarOptionals.IpDomain.Value() != "" {
 		localVarQueryParams.Add("ipDomain", openapi.ParameterToString(localVarOptionals.IpDomain.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.SuppFeat.IsSet() {
+	if localVarOptionals != nil && localVarOptionals.SuppFeat.IsSet() && localVarOptionals.SuppFeat.Value() != "" {
 		localVarQueryParams.Add("supp-feat", openapi.ParameterToString(localVarOptionals.SuppFeat.Value(), ""))
 	}
 
