@@ -16,11 +16,12 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	ApplicationSessionsCollectionApi               *ApplicationSessionsCollectionApiService
-	EventsSubscriptionDocumentApi                  *EventsSubscriptionDocumentApiService
-	IndividualApplicationSessionContextDocumentApi *IndividualApplicationSessionContextDocumentApiService
-	PolicyAuthorizationEventNotificationApi        *PolicyAuthorizationEventNotificationApiService
-	PolicyAuthorizationTerminateRequestApi         *PolicyAuthorizationTerminateRequestApiService
+	ApplicationSessionsCollectionApi                            *ApplicationSessionsCollectionApiService
+	EventsSubscriptionDocumentApi                               *EventsSubscriptionDocumentApiService
+	IndividualApplicationSessionContextDocumentApi              *IndividualApplicationSessionContextDocumentApiService
+	PolicyAuthorizationEventNotificationApi                     *PolicyAuthorizationEventNotificationApiService
+	PolicyAuthorizationTerminateRequestApi                      *PolicyAuthorizationTerminateRequestApiService
+	PolicyAuthorizationDetected5GsBridgeForPduSessionRequestApi *PolicyAuthorizationDetected5GsBridgeForPduSessionRequestApiService
 }
 
 type service struct {
@@ -40,5 +41,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.IndividualApplicationSessionContextDocumentApi = (*IndividualApplicationSessionContextDocumentApiService)(&c.common)
 	c.PolicyAuthorizationEventNotificationApi = (*PolicyAuthorizationEventNotificationApiService)(&c.common)
 	c.PolicyAuthorizationTerminateRequestApi = (*PolicyAuthorizationTerminateRequestApiService)(&c.common)
+	c.PolicyAuthorizationDetected5GsBridgeForPduSessionRequestApi = (*PolicyAuthorizationDetected5GsBridgeForPduSessionRequestApiService)(&c.common)
 	return c
 }
