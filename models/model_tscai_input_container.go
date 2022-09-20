@@ -1,6 +1,6 @@
 package models
 
 type TscaiInputContainer struct {
-	periodicity      uint
-	burstArrivalTime string
+	Periodicity      uint
+	BurstArrivalTime string
 }

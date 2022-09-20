@@ -19,4 +19,5 @@ const (
 	AfEvent_QOS_NOTIF                       AfEvent = "QOS_NOTIF"
 	AfEvent_SUCCESSFUL_RESOURCES_ALLOCATION AfEvent = "SUCCESSFUL_RESOURCES_ALLOCATION"
 	AfEvent_USAGE_REPORT                    AfEvent = "USAGE_REPORT"
+	AfEvent_TSN_BRIDGE_INFO                 AfEvent = "TSN_BRIDGE_INFO"
 )
