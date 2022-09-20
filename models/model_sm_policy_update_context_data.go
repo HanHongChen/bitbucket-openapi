@@ -45,8 +45,11 @@ type SmPolicyUpdateContextData struct {
 	QncReports           []QosNotificationControlInfo `json:"qncReports,omitempty" yaml:"qncReports" bson:"qncReports" mapstructure:"QncReports"`
 	UserLocationInfoTime *time.Time                   `json:"userLocationInfoTime,omitempty" yaml:"userLocationInfoTime" bson:"userLocationInfoTime" mapstructure:"UserLocationInfoTime"`
 	// Reports the changes of presence reporting area.
-	RepPraInfos  map[string]PresenceInfo     `json:"repPraInfos,omitempty" yaml:"repPraInfos" bson:"repPraInfos" mapstructure:"RepPraInfos"`
-	UeInitResReq *UeInitiatedResourceRequest `json:"ueInitResReq,omitempty" yaml:"ueInitResReq" bson:"ueInitResReq" mapstructure:"UeInitResReq"`
+	RepPraInfos        map[string]PresenceInfo     `json:"repPraInfos,omitempty" yaml:"repPraInfos" bson:"repPraInfos" mapstructure:"RepPraInfos"`
+	UeInitResReq       *UeInitiatedResourceRequest `json:"ueInitResReq,omitempty" yaml:"ueInitResReq" bson:"ueInitResReq" mapstructure:"UeInitResReq"`
+	TsnBridgeInfo      *TsnBridgeInformation
+	TsnPortManContDstt *PortMangementContainer
+	TsnPortManContNwtt []PortMangementContainer
 	// If it is included and set to true, the reflective QoS is supported by the UE. If it is included and set to false, the reflective QoS is revoked by the UE.
 	RefQosIndication   bool                   `json:"refQosIndication,omitempty" yaml:"refQosIndication" bson:"refQosIndication" mapstructure:"RefQosIndication"`
 	QosFlowUsage       QosFlowUsage           `json:"qosFlowUsage,omitempty" yaml:"qosFlowUsage" bson:"qosFlowUsage" mapstructure:"QosFlowUsage"`

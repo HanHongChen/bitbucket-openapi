@@ -40,4 +40,5 @@ const (
 	PolicyControlRequestTrigger_NUM_OF_PACKET_FILTER PolicyControlRequestTrigger = "NUM_OF_PACKET_FILTER"
 	PolicyControlRequestTrigger_UE_STATUS_RESUME     PolicyControlRequestTrigger = "UE_STATUS_RESUME"
 	PolicyControlRequestTrigger_UE_TZ_CH             PolicyControlRequestTrigger = "UE_TZ_CH"
+	PolicyControlRequestTrigger_TSN_BRIDGE_INFO      PolicyControlRequestTrigger = "TSN_BRIDGE_INFO"
 )
