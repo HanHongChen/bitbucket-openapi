@@ -38,4 +38,5 @@ type AppSessionContextReqData struct {
 	UeMac              string           `json:"ueMac,omitempty" yaml:"ueMac" bson:"ueMac" mapstructure:"UeMac"`
 	TsnPortManContDstt *PortMangementContainer
 	TsnPortManContNwtt *PortMangementContainer
+	TsnBridgeManCont   []uint8
 }
