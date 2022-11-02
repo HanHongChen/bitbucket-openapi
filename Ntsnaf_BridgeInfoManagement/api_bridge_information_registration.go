@@ -22,7 +22,7 @@ import (
 
 type BridgeInfoManagementBridgeInformationRegistrationApiService service
 
-func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfoManagementBridgeInformationRegistration(ctx context.Context, BridgeManagementInfo []byte) ([]byte, *http.Response, error) {
+func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfoManagementBridgeInformationRegistration(ctx context.Context, BridgeManagementInfo models.PortMangementContainer) ([]byte, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = strings.ToUpper("PUT")
 		localVarPostBody     interface{}
@@ -75,7 +75,7 @@ func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfo
 	}
 
 	switch localVarHTTPResponse.StatusCode {
-	case 201:
+	case 200:
 		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
