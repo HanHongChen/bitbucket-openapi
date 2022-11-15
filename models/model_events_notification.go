@@ -21,4 +21,8 @@ type EventsNotification struct {
 	QncReports                []QosNotificationControlInfo `json:"qncReports,omitempty" yaml:"qncReports" bson:"qncReports" mapstructure:"QncReports"`
 	RatType                   RatType                      `json:"ratType,omitempty" yaml:"ratType" bson:"ratType" mapstructure:"RatType"`
 	UsgRep                    *AccumulatedUsage            `json:"usgRep,omitempty" yaml:"usgRep" bson:"usgRep" mapstructure:"UsgRep"`
+	TsnBridgeInfo             *TsnBridgeInformation
+	TsnPortManContDstt        *PortMangementContainer
+	TsnBridgeManCont          []uint8
+	TsnPortManContNwtts       []PortMangementContainer
 }
