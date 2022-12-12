@@ -5,6 +5,6 @@ type TsnBridgeInformation struct {
 	DsttAddr      string
 	DsttResidTime [8]uint8
 	BridgeId      uint64
-	NwttPortNums  []uint8
-	DsttPortNum   [6]uint8
+	NwttPortNums  []uint32
+	DsttPortNum   uint32
 }
