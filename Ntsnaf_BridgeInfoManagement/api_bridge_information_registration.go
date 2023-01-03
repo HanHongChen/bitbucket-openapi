@@ -22,14 +22,13 @@ import (
 
 type BridgeInfoManagementBridgeInformationRegistrationApiService service
 
-func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfoManagementBridgeInformationRegistration(ctx context.Context, BridgeManagementInfo models.PortMangementContainer) ([]byte, *http.Response, error) {
+func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfoManagementBridgeInformationRegistration(ctx context.Context, BridgeManagementInfo models.TsnBridgeRegistrationInfo) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = strings.ToUpper("PUT")
+		localVarHTTPMethod   = strings.ToUpper("POST")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []byte
 	)
 
 	// create path and map variables
@@ -55,18 +54,18 @@ func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfo
 
 	r, err := openapi.PrepareRequest(ctx, a.client.cfg, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return localVarReturnValue, nil, err
+		return nil, err
 	}
 
 	localVarHTTPResponse, err := openapi.CallAPI(a.client.cfg, r)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
+		return localVarHTTPResponse, err
 	}
 
 	apiError := openapi.GenericOpenAPIError{
@@ -76,104 +75,98 @@ func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfo
 
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
-		err = openapi.Deserialize(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-		if err != nil {
-			apiError.ErrorStatus = err.Error()
-		}
-		return localVarReturnValue, localVarHTTPResponse, nil
-	case 303:
-		return localVarReturnValue, localVarHTTPResponse, nil
+		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 401:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 403:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 404:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 411:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 413:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 415:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 429:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 500:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	case 503:
 		var v models.ProblemDetails
 		err = openapi.Deserialize(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			apiError.ErrorStatus = err.Error()
-			return localVarReturnValue, localVarHTTPResponse, apiError
+			return localVarHTTPResponse, apiError
 		}
 		apiError.ErrorModel = v
-		return localVarReturnValue, localVarHTTPResponse, apiError
+		return localVarHTTPResponse, apiError
 	default:
-		return localVarReturnValue, localVarHTTPResponse, nil
+		return localVarHTTPResponse, nil
 	}
 }

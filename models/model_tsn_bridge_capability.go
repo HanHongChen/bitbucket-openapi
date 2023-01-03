@@ -5,8 +5,8 @@ type TsnBridgeCapability struct {
 	IngressPortNum      uint32
 	EgressPortNum       uint32
 	Traffic_class       uint8
-	DependentDelayMin   float64
-	DependentDelayMax   float64
-	IndependentDelayMin float64
-	IndependentDelayMax float64
+	DependentDelayMin   uint64
+	DependentDelayMax   uint64
+	IndependentDelayMin uint64
+	IndependentDelayMax uint64
 }
