@@ -20,11 +20,11 @@ import (
 	"bitbucket.org/free5gc-team/openapi/models"
 )
 
-type BridgeInfoManagementBridgeInformationRegistrationApiService service
+type BridgeInfoManagementBridgeInformationUpdateApiService service
 
-func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfoManagementBridgeInformationRegistration(ctx context.Context, BridgeManagementInfo models.TsnBridgeRegistrationInfo) (*http.Response, error) {
+func (a *BridgeInfoManagementBridgeInformationUpdateApiService) BridgeInfoManagementBridgeInformationUpdate(ctx context.Context, BridgeManagementInfo models.TsnBridgeRegistrationInfo) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = strings.ToUpper("POST")
+		localVarHTTPMethod   = strings.ToUpper("PUT")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
@@ -32,7 +32,7 @@ func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath() + "/bridge-info"
+	localVarPath := a.client.cfg.BasePath() + "/bridge-info-update"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
@@ -76,7 +76,7 @@ func (a *BridgeInfoManagementBridgeInformationRegistrationApiService) BridgeInfo
 	switch localVarHTTPResponse.StatusCode {
 	case 200:
 		return localVarHTTPResponse, nil
-	case 202:
+	case 204:
 		return localVarHTTPResponse, nil
 	case 400:
 		var v models.ProblemDetails
