@@ -45,10 +45,12 @@ type SmPolicyDecision struct {
 	LastReqRuleData  []RequestedRuleData `json:"lastReqRuleData,omitempty" yaml:"lastReqRuleData" bson:"lastReqRuleData" mapstructure:"LastReqRuleData"`
 	LastReqUsageData *RequestedUsageData `json:"lastReqUsageData,omitempty" yaml:"lastReqUsageData" bson:"lastReqUsageData" mapstructure:"LastReqUsageData"`
 	// Map of PRA information.
-	PraInfos           map[string]*PresenceInfoRm `json:"praInfos,omitempty" yaml:"praInfos" bson:"praInfos" mapstructure:"PraInfos"`
-	Ipv4Index          int32                      `json:"ipv4Index,omitempty" yaml:"ipv4Index" bson:"ipv4Index" mapstructure:"Ipv4Index"`
-	Ipv6Index          int32                      `json:"ipv6Index,omitempty" yaml:"ipv6Index" bson:"ipv6Index" mapstructure:"Ipv6Index"`
-	QosFlowUsage       QosFlowUsage               `json:"qosFlowUsage,omitempty" yaml:"qosFlowUsage" bson:"qosFlowUsage" mapstructure:"QosFlowUsage"`
-	SuppFeat           string                     `json:"suppFeat,omitempty" yaml:"suppFeat" bson:"suppFeat" mapstructure:"SuppFeat"`
-	TsnPortManContDstt *PortMangementContainer
+	PraInfos            map[string]*PresenceInfoRm `json:"praInfos,omitempty" yaml:"praInfos" bson:"praInfos" mapstructure:"PraInfos"`
+	Ipv4Index           int32                      `json:"ipv4Index,omitempty" yaml:"ipv4Index" bson:"ipv4Index" mapstructure:"Ipv4Index"`
+	Ipv6Index           int32                      `json:"ipv6Index,omitempty" yaml:"ipv6Index" bson:"ipv6Index" mapstructure:"Ipv6Index"`
+	QosFlowUsage        QosFlowUsage               `json:"qosFlowUsage,omitempty" yaml:"qosFlowUsage" bson:"qosFlowUsage" mapstructure:"QosFlowUsage"`
+	SuppFeat            string                     `json:"suppFeat,omitempty" yaml:"suppFeat" bson:"suppFeat" mapstructure:"SuppFeat"`
+	TsnBridgeManCont    []uint8
+	TsnPortManContDstt  *PortMangementContainer
+	TsnPortManContNwtts []PortMangementContainer
 }

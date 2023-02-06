@@ -28,15 +28,15 @@ type AppSessionContextReqData struct {
 	NotifUri  string  `json:"notifUri" yaml:"notifUri" bson:"notifUri" mapstructure:"NotifUri"`
 	SliceInfo *Snssai `json:"sliceInfo,omitempty" yaml:"sliceInfo" bson:"sliceInfo" mapstructure:"SliceInfo"`
 	// Contains an identity of a sponsor.
-	SponId             string           `json:"sponId,omitempty" yaml:"sponId" bson:"sponId" mapstructure:"SponId"`
-	SponStatus         SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
-	Supi               string           `json:"supi,omitempty" yaml:"supi" bson:"supi" mapstructure:"Supi"`
-	Gpsi               string           `json:"gpsi,omitempty" yaml:"gpsi" bson:"gpsi" mapstructure:"Gpsi"`
-	SuppFeat           string           `json:"suppFeat" yaml:"suppFeat" bson:"suppFeat" mapstructure:"SuppFeat"`
-	UeIpv4             string           `json:"ueIpv4,omitempty" yaml:"ueIpv4" bson:"ueIpv4" mapstructure:"UeIpv4"`
-	UeIpv6             string           `json:"ueIpv6,omitempty" yaml:"ueIpv6" bson:"ueIpv6" mapstructure:"UeIpv6"`
-	UeMac              string           `json:"ueMac,omitempty" yaml:"ueMac" bson:"ueMac" mapstructure:"UeMac"`
-	TsnPortManContDstt *PortMangementContainer
-	TsnPortManContNwtt []PortMangementContainer
-	TsnBridgeManCont   []uint8
+	SponId              string           `json:"sponId,omitempty" yaml:"sponId" bson:"sponId" mapstructure:"SponId"`
+	SponStatus          SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
+	Supi                string           `json:"supi,omitempty" yaml:"supi" bson:"supi" mapstructure:"Supi"`
+	Gpsi                string           `json:"gpsi,omitempty" yaml:"gpsi" bson:"gpsi" mapstructure:"Gpsi"`
+	SuppFeat            string           `json:"suppFeat" yaml:"suppFeat" bson:"suppFeat" mapstructure:"SuppFeat"`
+	UeIpv4              string           `json:"ueIpv4,omitempty" yaml:"ueIpv4" bson:"ueIpv4" mapstructure:"UeIpv4"`
+	UeIpv6              string           `json:"ueIpv6,omitempty" yaml:"ueIpv6" bson:"ueIpv6" mapstructure:"UeIpv6"`
+	UeMac               string           `json:"ueMac,omitempty" yaml:"ueMac" bson:"ueMac" mapstructure:"UeMac"`
+	TsnPortManContDstt  *PortMangementContainer
+	TsnPortManContNwtts []PortMangementContainer
+	TsnBridgeManCont    []uint8
 }

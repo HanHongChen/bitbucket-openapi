@@ -23,9 +23,9 @@ type AppSessionContextUpdateData struct {
 	// indication of MPS service request
 	MpsId string `json:"mpsId,omitempty" yaml:"mpsId" bson:"mpsId" mapstructure:"MpsId"`
 	// Contains an identity of a sponsor.
-	SponId             string           `json:"sponId,omitempty" yaml:"sponId" bson:"sponId" mapstructure:"SponId"`
-	SponStatus         SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
-	TsnPortManContDstt *PortMangementContainer
-	TsnPortManContNwtt []PortMangementContainer
-	TsnBridgeManCont   []uint8
+	SponId              string           `json:"sponId,omitempty" yaml:"sponId" bson:"sponId" mapstructure:"SponId"`
+	SponStatus          SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
+	TsnPortManContDstt  *PortMangementContainer
+	TsnPortManContNwtts []PortMangementContainer
+	TsnBridgeManCont    []uint8
 }
