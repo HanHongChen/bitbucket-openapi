@@ -1,6 +1,8 @@
 package models
 
 type TsnBridgeConfiguration struct {
-	StreamPriority int `json:"streamPriority"`
-	IngressPort    int `json:"ingressPort"`
+	BridgeId       uint64 `json:"bridgeid"`
+	Traffic_class  uint8  `json:"traffic_class"`
+	IngressPortNum uint32 `json:"ingressPortnum"`
+	EgressPortNum  uint32 `json:"egressPortnum"`
 }
