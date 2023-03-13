@@ -1,7 +1,7 @@
 package models
 
 type TsnQosContainer struct {
-	MaxTscBurstSize uint
+	MaxTscBurstSize int
 	TscPackDelay    int
-	TscPrioLevel    uint
+	TscPrioLevel    int
 }

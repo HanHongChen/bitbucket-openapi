@@ -26,4 +26,8 @@ type MediaComponentRm struct {
 	MirBwDl     string                         `json:"mirBwDl,omitempty" yaml:"mirBwDl" bson:"mirBwDl" mapstructure:"MirBwDl"`
 	MirBwUl     string                         `json:"mirBwUl,omitempty" yaml:"mirBwUl" bson:"mirBwUl" mapstructure:"MirBwUl"`
 	ResPrio     ReservPriority                 `json:"resPrio,omitempty" yaml:"resPrio" bson:"resPrio" mapstructure:"ResPrio"`
+	// Tscai input information
+	TscQos       *TsnQosContainer
+	TscaiInputUl *TscaiInputContainer
+	TscaiInputDl *TscaiInputContainer
 }
