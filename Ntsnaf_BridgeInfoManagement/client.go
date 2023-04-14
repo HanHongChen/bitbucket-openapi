@@ -18,6 +18,7 @@ type APIClient struct {
 	// API Services
 	BridgeInfoManagementBridgeInformationRegistrationApi *BridgeInfoManagementBridgeInformationRegistrationApiService
 	BridgeInfoManagementBridgeInformationUpdateApi       *BridgeInfoManagementBridgeInformationUpdateApiService
+	BridgeInfoManagementTsnStreamApi                     *BridgeInfoManagementTsnStreamApiService
 }
 
 type service struct {
@@ -32,5 +33,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.BridgeInfoManagementBridgeInformationRegistrationApi = (*BridgeInfoManagementBridgeInformationRegistrationApiService)(&c.common)
 	c.BridgeInfoManagementBridgeInformationUpdateApi = (*BridgeInfoManagementBridgeInformationUpdateApiService)(&c.common)
+	c.BridgeInfoManagementTsnStreamApi = (*BridgeInfoManagementTsnStreamApiService)(&c.common)
 	return c
 }
