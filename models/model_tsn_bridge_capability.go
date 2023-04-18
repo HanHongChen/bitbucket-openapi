@@ -9,4 +9,5 @@ type TsnBridgeCapability struct {
 	DependentDelayMax   uint64
 	IndependentDelayMin uint64
 	IndependentDelayMax uint64
+	Active              bool
 }

@@ -11,6 +11,7 @@ package Ntsnaf_BridgeInfoManagement
 
 import (
 	"context"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -22,18 +23,19 @@ import (
 
 type BridgeInfoManagementGetPortPairInformationApiService service
 
-func (a *BridgeInfoManagementGetPortPairInformationApiService) BridgeInfoManagementGetPortPairInformation(ctx context.Context, bridgeid uint64) ([][]models.TsnBridgeCapability, *http.Response, error) {
+func (a *BridgeInfoManagementGetPortPairInformationApiService) BridgeInfoManagementGetPortPairInformation(ctx context.Context, bridgeid string) ([]models.TsnBridgeCapability, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = strings.ToUpper("GET")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  [][]models.TsnBridgeCapability
+		localVarReturnValue  []models.TsnBridgeCapability
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath() + "/port-pair-info"
+	localVarPath := a.client.cfg.BasePath() + "/GetActivePortInfo/{bridgeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"bridgeid"+"}", fmt.Sprintf("%v", bridgeid), -1)
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}

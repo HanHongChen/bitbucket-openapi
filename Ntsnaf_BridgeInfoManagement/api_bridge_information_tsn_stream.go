@@ -22,14 +22,14 @@ import (
 
 type BridgeInfoManagementTsnStreamApiService service
 
-func (a *BridgeInfoManagementTsnStreamApiService) BridgeInfoManagementTsnStream(ctx context.Context) (models.TsnStreamContext, *http.Response, error) {
+func (a *BridgeInfoManagementTsnStreamApiService) BridgeInfoManagementTsnStream(ctx context.Context) ([]models.TsnStreamInfomation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = strings.ToUpper("POST")
+		localVarHTTPMethod   = strings.ToUpper("GET")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  models.TsnStreamContext
+		localVarReturnValue  []models.TsnStreamInfomation
 	)
 
 	// create path and map variables
