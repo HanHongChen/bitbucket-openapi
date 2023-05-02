@@ -23,14 +23,14 @@ import (
 
 type BridgeInfoManagementGetPortPairInformationApiService service
 
-func (a *BridgeInfoManagementGetPortPairInformationApiService) BridgeInfoManagementGetPortPairInformation(ctx context.Context, bridgeid string) ([]models.TsnBridgeCapability, *http.Response, error) {
+func (a *BridgeInfoManagementGetPortPairInformationApiService) BridgeInfoManagementGetPortPairInformation(ctx context.Context, bridgeid string) ([][]models.TsnBridgeCapability, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = strings.ToUpper("GET")
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []models.TsnBridgeCapability
+		localVarReturnValue  [][]models.TsnBridgeCapability
 	)
 
 	// create path and map variables
