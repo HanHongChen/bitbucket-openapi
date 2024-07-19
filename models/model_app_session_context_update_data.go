@@ -25,7 +25,7 @@ type AppSessionContextUpdateData struct {
 	// Contains an identity of a sponsor.
 	SponId              string           `json:"sponId,omitempty" yaml:"sponId" bson:"sponId" mapstructure:"SponId"`
 	SponStatus          SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
-	TsnPortManContDstt  *PortMangementContainer
-	TsnPortManContNwtts []PortMangementContainer
+	TsnPortManContDstt  *PortManagementContainer
+	TsnPortManContNwtts []PortManagementContainer
 	TsnBridgeManCont    []uint8
 }

@@ -36,7 +36,7 @@ type AppSessionContextReqData struct {
 	UeIpv4              string           `json:"ueIpv4,omitempty" yaml:"ueIpv4" bson:"ueIpv4" mapstructure:"UeIpv4"`
 	UeIpv6              string           `json:"ueIpv6,omitempty" yaml:"ueIpv6" bson:"ueIpv6" mapstructure:"UeIpv6"`
 	UeMac               string           `json:"ueMac,omitempty" yaml:"ueMac" bson:"ueMac" mapstructure:"UeMac"`
-	TsnPortManContDstt  *PortMangementContainer
-	TsnPortManContNwtts []PortMangementContainer
+	TsnPortManContDstt  *PortManagementContainer
+	TsnPortManContNwtts []PortManagementContainer
 	TsnBridgeManCont    []uint8
 }

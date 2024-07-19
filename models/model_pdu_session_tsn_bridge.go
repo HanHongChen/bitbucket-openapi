@@ -2,7 +2,7 @@ package models
 
 type PduSessionTsnBridge struct {
 	TsnBridgeInfo      *TsnBridgeInformation
-	TsnPortManContDstt *PortMangementContainer
+	TsnPortManContDstt *PortManagementContainer
 	//TsnPortManCont
-	TsnPortManContNwtts []PortMangementContainer
+	TsnPortManContNwtts []PortManagementContainer
 }

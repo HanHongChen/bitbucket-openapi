@@ -50,7 +50,7 @@ type SmPolicyDecision struct {
 	Ipv6Index           int32                      `json:"ipv6Index,omitempty" yaml:"ipv6Index" bson:"ipv6Index" mapstructure:"Ipv6Index"`
 	QosFlowUsage        QosFlowUsage               `json:"qosFlowUsage,omitempty" yaml:"qosFlowUsage" bson:"qosFlowUsage" mapstructure:"QosFlowUsage"`
 	SuppFeat            string                     `json:"suppFeat,omitempty" yaml:"suppFeat" bson:"suppFeat" mapstructure:"SuppFeat"`
-	TsnBridgeManCont    []uint8
-	TsnPortManContDstt  *PortMangementContainer
-	TsnPortManContNwtts []PortMangementContainer
+	TsnBridgeManCont    *BridgeManagementContainer `json:"tsnBridgeManCont,omitempty" yaml:"tsnBridgeManCont" bson:"tsnBridgeManCont" mapstructure:"TsnBridgeManCont"`
+	TsnPortManContDstt  *PortManagementContainer
+	TsnPortManContNwtts []PortManagementContainer
 }

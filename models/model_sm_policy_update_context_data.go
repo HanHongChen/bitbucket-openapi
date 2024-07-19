@@ -48,8 +48,9 @@ type SmPolicyUpdateContextData struct {
 	RepPraInfos         map[string]PresenceInfo     `json:"repPraInfos,omitempty" yaml:"repPraInfos" bson:"repPraInfos" mapstructure:"RepPraInfos"`
 	UeInitResReq        *UeInitiatedResourceRequest `json:"ueInitResReq,omitempty" yaml:"ueInitResReq" bson:"ueInitResReq" mapstructure:"UeInitResReq"`
 	TsnBridgeInfo       *TsnBridgeInformation
-	TsnPortManContDstt  *PortMangementContainer
-	TsnPortManContNwtts []PortMangementContainer
+	TsnBridgeManCont    *BridgeManagementContainer `json:"tsnBridgeManCont,omitempty" yaml:"tsnBridgeManCont" bson:"tsnBridgeManCont" mapstructure:"TsnBridgeManCont"`
+	TsnPortManContDstt  *PortManagementContainer
+	TsnPortManContNwtts []PortManagementContainer
 	// If it is included and set to true, the reflective QoS is supported by the UE. If it is included and set to false, the reflective QoS is revoked by the UE.
 	RefQosIndication   bool                   `json:"refQosIndication,omitempty" yaml:"refQosIndication" bson:"refQosIndication" mapstructure:"RefQosIndication"`
 	QosFlowUsage       QosFlowUsage           `json:"qosFlowUsage,omitempty" yaml:"qosFlowUsage" bson:"qosFlowUsage" mapstructure:"QosFlowUsage"`

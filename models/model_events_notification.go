@@ -22,7 +22,7 @@ type EventsNotification struct {
 	RatType                   RatType                      `json:"ratType,omitempty" yaml:"ratType" bson:"ratType" mapstructure:"RatType"`
 	UsgRep                    *AccumulatedUsage            `json:"usgRep,omitempty" yaml:"usgRep" bson:"usgRep" mapstructure:"UsgRep"`
 	TsnBridgeInfo             *TsnBridgeInformation
-	TsnPortManContDstt        *PortMangementContainer
+	TsnPortManContDstt        *PortManagementContainer
 	TsnBridgeManCont          []uint8
-	TsnPortManContNwtts       []PortMangementContainer
+	TsnPortManContNwtts       []PortManagementContainer
 }
