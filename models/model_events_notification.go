@@ -23,6 +23,6 @@ type EventsNotification struct {
 	UsgRep                    *AccumulatedUsage            `json:"usgRep,omitempty" yaml:"usgRep" bson:"usgRep" mapstructure:"UsgRep"`
 	TsnBridgeInfo             *TsnBridgeInformation
 	TsnPortManContDstt        *PortManagementContainer
-	TsnBridgeManCont          []uint8
+	TsnBridgeManCont          *BridgeManagementContainer
 	TsnPortManContNwtts       []PortManagementContainer
 }

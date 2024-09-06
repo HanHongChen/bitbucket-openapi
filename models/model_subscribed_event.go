@@ -13,5 +13,6 @@ type SubscribedEvent string
 
 // List of SubscribedEvent
 const (
-	SubscribedEvent_UP_PATH_CHANGE SubscribedEvent = "UP_PATH_CHANGE"
+	SubscribedEvent_UP_PATH_CHANGE                     SubscribedEvent = "UP_PATH_CHANGE"
+	SubscribedEvent_AVAILABILITY_FOR_TIME_SYNC_SERVICE SubscribedEvent = "AVAILABILITY_FOR_TIME_SYNC_SERVICE"
 )
