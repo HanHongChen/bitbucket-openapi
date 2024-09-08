@@ -12,7 +12,7 @@ package models
 // Contains the Time Synchronization Configuration parameters.
 type TimeSyncExposureConfig struct {
 	// Integer where the allowed values correspond to the value range of an unsigned 64-bit integer.
-	UpNodeId  int32        `json:"upNodeId" yaml:"upNodeId" bson:"upNodeId" mapstructure:"UpNodeId"`
+	UpNodeId  uint64       `json:"upNodeId" yaml:"upNodeId" bson:"upNodeId" mapstructure:"UpNodeId"`
 	ReqPtpIns *PtpInstance `json:"reqPtpIns" yaml:"reqPtpIns" bson:"reqPtpIns" mapstructure:"ReqPtpIns"`
 	// Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is  included and set to true.
 	GmEnable bool `json:"gmEnable,omitempty" yaml:"gmEnable" bson:"gmEnable" mapstructure:"GmEnable"`
