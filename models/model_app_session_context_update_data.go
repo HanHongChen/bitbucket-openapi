@@ -27,5 +27,5 @@ type AppSessionContextUpdateData struct {
 	SponStatus          SponsoringStatus `json:"sponStatus,omitempty" yaml:"sponStatus" bson:"sponStatus" mapstructure:"SponStatus"`
 	TsnPortManContDstt  *PortManagementContainer
 	TsnPortManContNwtts []PortManagementContainer
-	TsnBridgeManCont    []uint8
+	TsnBridgeManCont    []BridgeManagementContainer
 }
