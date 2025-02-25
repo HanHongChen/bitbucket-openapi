@@ -17,7 +17,7 @@ import (
 	"github.com/golang-jwt/jwt"
 	"github.com/pkg/errors"
 
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 type CCAClaims struct {
@@ -91,7 +91,7 @@ func VerifyOAuth(
 }
 
 func verifyScope(scope, serviceName string) bool {
-	if len(serviceName) == 0{
+	if len(serviceName) == 0 {
 		return true
 	}
 	if len(scope) != 0 {

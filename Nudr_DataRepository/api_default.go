@@ -19,8 +19,8 @@ import (
 
 	"github.com/antihax/optional"
 
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 // Linger please
@@ -3079,7 +3079,7 @@ func (a *DefaultApiService) PolicyDataUesUeIdSmDataGet(ctx context.Context, ueId
 	if localVarOptionals != nil && localVarOptionals.Dnn.IsSet() && localVarOptionals.Dnn.Value() != "" {
 		localVarQueryParams.Add("dnn", openapi.ParameterToString(localVarOptionals.Dnn.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() && localVarOptionals.Fields.Value() != ""{
+	if localVarOptionals != nil && localVarOptionals.Fields.IsSet() && localVarOptionals.Fields.Value() != "" {
 		localVarQueryParams.Add("fields", openapi.ParameterToString(localVarOptionals.Fields.Value(), "csv"))
 	}
 

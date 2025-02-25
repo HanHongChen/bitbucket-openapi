@@ -11,7 +11,7 @@ package Nudr_DataRepository
 
 import (
 
-	// "bitbucket.org/free5gc-team/openapi/models"
+	// "github.com/HanHongChen/bitbucket-openapi/openapi/models"
 	"context"
 	"fmt"
 	"io/ioutil"
@@ -19,7 +19,7 @@ import (
 	"net/url"
 	"strings"
 
-	"bitbucket.org/free5gc-team/openapi"
+	"github.com/HanHongChen/bitbucket-openapi/openapi"
 )
 
 // Linger please

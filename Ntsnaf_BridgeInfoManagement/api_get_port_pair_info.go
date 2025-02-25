@@ -17,8 +17,8 @@ import (
 	"net/url"
 	"strings"
 
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 type BridgeInfoManagementGetPortPairInformationApiService service

@@ -10,8 +10,8 @@
 package Nudr_DataRepository
 
 import (
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 
 	"context"
 	"io/ioutil"

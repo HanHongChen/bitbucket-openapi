@@ -3,7 +3,7 @@ package openapi
 import (
 	"net/http"
 
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 func ProblemDetailsSystemFailure(detail string) *models.ProblemDetails {
@@ -30,4 +30,3 @@ func ProblemDetailsDataNotFound(detail string) *models.ProblemDetails {
 		Detail: detail,
 	}
 }
-

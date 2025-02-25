@@ -3,7 +3,7 @@ package Nsmf_PDUSession
 import (
 	"net/http"
 
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 var (

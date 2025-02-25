@@ -17,8 +17,8 @@ import (
 	"net/url"
 	"strings"
 
-	"bitbucket.org/free5gc-team/openapi"
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 )
 
 // Linger please
@@ -33,9 +33,10 @@ type (
 
 /*
 EventExposureNotification
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param notificationUri
- * @param request
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param notificationUri
+  - @param request
+
 @return
 */
 func (a *DefaultCallbackApi) SmfEventExposureNotification(ctx context.Context, notificationUri string, request models.NsmfEventExposureNotification) (interface{}, *http.Response, error) {

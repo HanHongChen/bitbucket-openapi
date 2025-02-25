@@ -10,7 +10,7 @@
 package Ntsctsf_TimeSynchronization
 
 import (
-	"bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
 
 	"context"
 	"fmt"
@@ -19,7 +19,7 @@ import (
 	"net/url"
 	"strings"
 
-	common "bitbucket.org/free5gc-team/openapi/common"
+	common "github.com/HanHongChen/bitbucket-openapi/openapi/common"
 )
 
 // Linger please

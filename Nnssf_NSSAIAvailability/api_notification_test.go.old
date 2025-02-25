@@ -16,8 +16,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"bitbucket.org/free5gc-team/http2_util"
-	. "bitbucket.org/free5gc-team/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/http2_util"
+	. "github.com/HanHongChen/bitbucket-openapi/openapi/models"
 	"free5gc/src/nssf/test"
 	"free5gc/src/nssf/util"
 )
