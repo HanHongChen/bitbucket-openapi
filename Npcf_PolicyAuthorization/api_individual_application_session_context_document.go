@@ -19,6 +19,7 @@ import (
 
 	"github.com/antihax/optional"
 
+	openapi "github.com/HanHongChen/bitbucket-openapi"
 	"github.com/HanHongChen/bitbucket-openapi/models"
 )
 

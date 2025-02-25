@@ -7,6 +7,7 @@ import (
 	"github.com/HanHongChen/bitbucket-openapi/http2_util"
 	"github.com/HanHongChen/bitbucket-openapi/Nsmf_PDUSession"
 	"github.com/HanHongChen/bitbucket-openapi/models"
+openapi "github.com/HanHongChen/bitbucket-openapi"
 	amf_context "free5gc/src/amf/context"
 	"free5gc/src/amf/handler"
 	"free5gc/src/amf/httpcallback"

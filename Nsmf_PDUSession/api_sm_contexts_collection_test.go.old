@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/HanHongChen/bitbucket-openapi/models"
+openapi "github.com/HanHongChen/bitbucket-openapi"
 	"log"
 	"testing"
 )

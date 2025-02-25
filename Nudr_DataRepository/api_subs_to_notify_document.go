@@ -20,6 +20,8 @@ import (
 	"strings"
 
 	openapi "github.com/HanHongChen/bitbucket-openapi"
+
+	openapi "github.com/HanHongChen/bitbucket-openapi"
 )
 
 // Linger please

@@ -17,6 +17,7 @@ import (
 	"net/url"
 	"strings"
 
+	openapi "github.com/HanHongChen/bitbucket-openapi"
 	"github.com/HanHongChen/bitbucket-openapi/models"
 )
 
