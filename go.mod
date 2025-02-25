@@ -1,4 +1,4 @@
-module github.com/HanHongChen/bitbucket-openapi/openapi
+module github.com/HanHongChen/bitbucket-openapi
 
 go 1.14
 

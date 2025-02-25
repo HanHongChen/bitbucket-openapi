@@ -10,8 +10,8 @@
 package Ntsctsf_TimeSynchronization
 
 import (
-	"github.com/HanHongChen/bitbucket-openapi/openapi/common"
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/common"
+	"github.com/HanHongChen/bitbucket-openapi/models"
 
 	"context"
 	"io/ioutil"

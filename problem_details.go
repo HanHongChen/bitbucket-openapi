@@ -3,7 +3,7 @@ package openapi
 import (
 	"net/http"
 
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/models"
 )
 
 func ProblemDetailsSystemFailure(detail string) *models.ProblemDetails {

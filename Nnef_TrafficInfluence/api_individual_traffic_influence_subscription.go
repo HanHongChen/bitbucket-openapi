@@ -16,9 +16,9 @@ import (
 	_neturl "net/url"
 	"strings"
 
-	"github.com/HanHongChen/bitbucket-openapi/openapi"
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models_nef"
+	openapi "github.com/HanHongChen/bitbucket-openapi"
+	"github.com/HanHongChen/bitbucket-openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/models_nef"
 )
 
 // Linger please

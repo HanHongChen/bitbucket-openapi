@@ -10,7 +10,7 @@
 package Ntsctsf_TimeSynchronization
 
 import (
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/models"
 
 	"context"
 	"fmt"
@@ -19,7 +19,7 @@ import (
 	"net/url"
 	"strings"
 
-	common "github.com/HanHongChen/bitbucket-openapi/openapi/common"
+	common "github.com/HanHongChen/bitbucket-openapi/common"
 )
 
 // Linger please

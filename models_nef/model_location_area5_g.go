@@ -10,7 +10,7 @@
 package models_nef
 
 import (
-	"github.com/HanHongChen/bitbucket-openapi/openapi/models"
+	"github.com/HanHongChen/bitbucket-openapi/models"
 )
 
 type LocationArea5G struct {

@@ -17,7 +17,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/HanHongChen/bitbucket-openapi/openapi"
+	openapi "github.com/HanHongChen/bitbucket-openapi"
 )
 
 // Linger please

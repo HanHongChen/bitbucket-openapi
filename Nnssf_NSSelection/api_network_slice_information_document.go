@@ -18,8 +18,7 @@ import (
 
 	"github.com/antihax/optional"
 
-	"github.com/HanHongChen/bitbucket-openapi/openapi"
-	. "github.com/HanHongChen/bitbucket-openapi/openapi/models"
+	. "github.com/HanHongChen/bitbucket-openapi/models"
 )
 
 // Linger please
